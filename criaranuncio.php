@@ -1,30 +1,33 @@
 <?php
-    include("config.php");
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "cadastrar") {
-        $nome = $_POST["nome"];
-        $endereco = $_POST["endereco"];
-        $idade = $_POST["idade"];
-        $sexo = $_POST["sexo"];
-        $porte = $_POST["porte"];
-        $raca = $_POST["raca"];
-        $cor = $_POST["cor"];
-        $enfermidade = $_POST["enfermidade"];
-        $fotoanuncio = $_POST["fotoanuncio"];
+include("config.php");
 
-        $sql = "INSERT INTO anuncio (nome, endereco, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "cadastrar") {
+    $nome = $_POST["nome"];
+    $endereco = $_POST["endereco"];
+    $idade = $_POST["idade"];
+    $sexo = $_POST["sexo"];
+    $porte = $_POST["porte"];
+    $raca = $_POST["raca"];
+    $cor = $_POST["cor"];
+    $enfermidade = $_POST["enfermidade"];
+    $fotoanuncio = $_POST["fotoanuncio"];
 
-        if ($conn->query($sql) === true) {
-            echo "Anúncio criado com sucesso.";
-            // Redirecionar para a página de anúncios
-            header("Location: ?page=anuncio");
-            exit;
-        } else {
-            echo "Erro ao criar o anúncio: " . $conn->error;
-        }
+    $sql = "INSERT INTO anuncio (nome, endereco, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
+
+    if ($conn->query($sql) === true) {
+        echo "Anúncio criado com sucesso.";
+        // Redirecionar para a página de anúncios
+        header("Location: ?page=anuncio");
+        exit;
+    } else {
+        echo "Erro ao criar o anúncio: " . $conn->error;
     }
+}
+
+
 ?>
 
-<form action="?page=criaranimal" method="POST">
+<form action="?page=criaranuncio" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div>
         <label>Nome</label>
@@ -66,3 +69,31 @@
         <button type="submit">Criar</button>
     </div>
 </form>
+
+<div>
+    <?php
+    $sql = "SELECT * FROM anuncio";
+
+    $res = $conn->query($sql);
+
+    $qtd = $res->num_rows;
+
+    if ($qtd > 0) {
+        while ($row = $res->fetch_object()) {
+            print $row->nome;
+            print $row->endereco;
+            print $row->idade;
+            print $row->sexo;
+            print $row->porte;
+            print $row->raca;
+            print $row->cor;
+            print $row->enfermidade;
+            print $row->fotoanuncio;
+            print "<button onclick=\"location.href='?page=editaranuncio&id=".$row->id."';\">Editar</button>";
+            echo "<button onclick=\"if(confirm('Tem certeza que deseja excluir o anúncio?')){location.href='exluiranuncio.php?id=".$row->id."';}else{false;}\">Excluir</button>";
+        }
+    } else {
+        print "<p>Não existe anúncios</p>";
+    }
+    ?>
+</div>
