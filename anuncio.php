@@ -48,6 +48,7 @@
                 <button><a href="#">Entrar</a></button>
             </div>
         </div>
+
     </header>
 
     <div>
@@ -74,7 +75,7 @@
                 echo $row->enfermidade;
                 echo $row->fotoanuncio;
 
-                echo "<button onclick=\"location.href='?page=editaranuncio&id=".$row->id."';\">Editar</button>";
+                echo "<button onclick=\"location.href='editarusuario.php?id=".$row->id."';\">Editar</button>";
                 echo "<button onclick=\"if(confirm('Tem certeza que deseja excluir o anúncio?')){location.href='exluiranuncio.php?id=".$row->id."';}else{false;}\">Excluir</button>";
             }
         } else {

@@ -23,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         echo "Erro ao criar o anúncio: " . $conn->error;
     }
 }
-
-
 ?>
 
 <form action="?page=criaranuncio" method="POST">
@@ -89,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
             print $row->cor;
             print $row->enfermidade;
             print $row->fotoanuncio;
-            print "<button onclick=\"location.href='?page=editaranuncio&id=".$row->id."';\">Editar</button>";
+            print "<button onclick=\"location.href='editarusuario.php?id=".$row->id."';\">Editar</button>";
             echo "<button onclick=\"if(confirm('Tem certeza que deseja excluir o anúncio?')){location.href='exluiranuncio.php?id=".$row->id."';}else{false;}\">Excluir</button>";
         }
     } else {
