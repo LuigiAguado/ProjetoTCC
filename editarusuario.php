@@ -78,7 +78,7 @@
     </div>
     <div>
         <label>Foto do animal</label>
-        <input type="text" name="fotoanuncio" value="<?php echo $row->fotoanuncio; ?>">
+        <input type="file" name="fotoanuncio" id="fotoanuncio" accept="image/*" required>
     </div>
     <div>
         <button type="submit">Editar</button>
