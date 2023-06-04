@@ -53,7 +53,7 @@
                 include("salvaranuncio.php");
                 break;
             case "editaranuncio":
-                include("editaranuncio.php");
+                include("editarusuario.php");
                 break;
             case "anuncio":
                 include("anuncio.php");
