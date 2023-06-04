@@ -2,7 +2,32 @@
     $sql = "SELECT * FROM anuncio WHERE id=".$_REQUEST["id"];
     $res = $conn->query($sql);
     $row = $res->fetch_object();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "editar") {
+        $id = $_POST["id"];
+        $nome = $_POST["nome"];
+        $endereco = $_POST["endereco"];
+        $idade = $_POST["idade"];
+        $sexo = $_POST["sexo"];
+        $porte = $_POST["porte"];
+        $raca = $_POST["raca"];
+        $cor = $_POST["cor"];
+        $enfermidade = $_POST["enfermidade"];
+        $fotoanuncio = $_POST["fotoanuncio"];
+
+        $sql = "UPDATE anuncio SET nome='{$nome}', endereco='{$endereco}', idade='{$idade}', sexo='{$sexo}', porte='{$porte}', raca='{$raca}', cor='{$cor}', enfermidade='{$enfermidade}', fotoanuncio='{$fotoanuncio}' WHERE id='{$id}'";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Anúncio atualizado com sucesso.";
+            // Redirecionar para a página de anúncios
+            header("Location: ?page=anuncio");
+            exit;
+        } else {
+            echo "Erro ao atualizar o anúncio: " . $conn->error;
+        }
+    }
 ?>
+
 
 <form action="?page-criaranuncio" method="POST">
     <input type="hidden" name="acao" value="editar">

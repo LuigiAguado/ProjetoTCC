@@ -1,3 +1,29 @@
+<?php
+    include("config.php");
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "cadastrar") {
+        $nome = $_POST["nome"];
+        $endereco = $_POST["endereco"];
+        $idade = $_POST["idade"];
+        $sexo = $_POST["sexo"];
+        $porte = $_POST["porte"];
+        $raca = $_POST["raca"];
+        $cor = $_POST["cor"];
+        $enfermidade = $_POST["enfermidade"];
+        $fotoanuncio = $_POST["fotoanuncio"];
+
+        $sql = "INSERT INTO anuncio (nome, endereco, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
+
+        if ($conn->query($sql) === true) {
+            echo "Anúncio criado com sucesso.";
+            // Redirecionar para a página de anúncios
+            header("Location: ?page=anuncio");
+            exit;
+        } else {
+            echo "Erro ao criar o anúncio: " . $conn->error;
+        }
+    }
+?>
+
 <form action="?page=criaranimal" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div>
@@ -9,8 +35,8 @@
         <input type="text" name="endereco">
     </div>
     <div>
-        <label>Idade(Aproximada)</label>
-        <input type="number" name="idade">
+        <label>Idade (Aproximada)</label>
+        <input type="number" name="idade" value="0">
     </div>
     <div>
         <label>Sexo</label>

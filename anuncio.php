@@ -92,7 +92,6 @@
             }else{
                 print "<p>Não existe anuncios</p>";
             }
-            echo $sql;
             ?>
 
             
