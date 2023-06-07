@@ -15,7 +15,7 @@
             <div class="logo">
             <p>
                 <a href="index.html">
-                    <img class="logotam" src="img/logo.png">
+                    <img class="logotam" src="img/amordepatas.png">
                 </a>
             </p>
             </div>
@@ -144,7 +144,7 @@
             <div id="footer_contacts">
                 <p>
                     <a href="index.html">
-                        <img class="logofootertam" src="img/logo.png">
+                        <img class="logofootertam" src="img/amordepatas.png">
                     </a>
                 </p>
             </div>

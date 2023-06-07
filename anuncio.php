@@ -29,15 +29,15 @@
             <div class="logo">
                 <p>
                     <a href="index.html">
-                        <img class="logotam" src="img/logo.png">
+                        <img class="logotam" src="img/amordepatas.png">
                     </a>
                 </p>
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: #fff;">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -116,7 +116,7 @@
             <div id="footer_contacts">
                 <p>
                     <a href="index.html">
-                        <img class="logofootertam" src="img/logo.png">
+                        <img class="logofootertam" src="img/amordepatas.png">
                     </a>
                 </p>
             </div>

@@ -15,6 +15,7 @@
             $deleteSql = "DELETE FROM anuncio WHERE id = $id";
             if ($conn->query($deleteSql) === true) {
                 echo "Anúncio excluído com sucesso.";
+                header("Location: anuncio.php");
             } else {
                 echo "Erro ao excluir o anúncio: " . $conn->error;
             }

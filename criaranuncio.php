@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     if ($conn->query($sql) === true) {
         echo "Anúncio criado com sucesso.";
         // Redirecionar para a página de anúncios
-        header("Location: ?page=anuncio");
+        header("Location: anuncio.php");
         exit;
     } else {
         echo "Erro ao criar o anúncio: " . $conn->error;
@@ -79,11 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     <div class="detalheform">
     <div class="infoform">
         <label class="letraform">Nome</label>
-        <input type="text" name="nome" placeholder="Insira o nome do animal">
+        <input type="text" name="nome" placeholder="Insira o nome do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" placeholder="Insira a localização do animal">
+        <input type="text" name="endereco" placeholder="Insira a localização do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Idade (Aproximada)</label>
@@ -91,19 +91,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     </div>
     <div class="infoform">
         <label class="letraform">Sexo</label>
-        <input type="text" name="sexo" placeholder="Insira o porte do animal">
+        <input type="text" name="sexo" placeholder="Insira o porte do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Porte</label>
-        <input type="text" name="porte" placeholder="Insira o porte do animal">
+        <input type="text" name="porte" placeholder="Insira o porte do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Raça</label>
-        <input type="text" name="raca" placeholder="Insira a raça do animal">
+        <input type="text" name="raca" placeholder="Insira a raça do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Cor</label>
-        <input type="text" name="cor" placeholder="Insira a cor do animal">
+        <input type="text" name="cor" placeholder="Insira a cor do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Enfermidade</label>
@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
             <div id="footer_contacts">
                 <p>
                     <a href="index.html">
-                        <img class="logofootertam" src="img/logo.png">
+                        <img class="logofootertam" src="img/amordepatas.png">
                     </a>
                 </p>
             </div>
