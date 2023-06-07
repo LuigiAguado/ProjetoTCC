@@ -95,16 +95,17 @@
             </div>
         </div>
 
-        <br><br><br><br>
+        <br><br>
 
         <div>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <a href="criaranuncio.php" class="btn btn-primary">
-                    <img src="sinal.png" alt="sinal de mais" width="25" height="25">
-                </a>
-                <p class="criar-anun">
-                    criar novo anúncio
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <p class="criar-anun" style="font-size: 2rem; color: #fff;">
+                    Criar novo anúncio
                 </p>
+                <a href="criaranuncio.php" class="btn btn-primary">
+                    <img src="img/sinal2.png" alt="+" width="25" height="25">
+                </a>
+                <br>
             </div>
 
         </div>
