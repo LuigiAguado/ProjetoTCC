@@ -22,8 +22,8 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="adote.html" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
