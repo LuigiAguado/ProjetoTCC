@@ -1,9 +1,9 @@
 .fundo {
-    background-color: #0187a7; /* Substitua pelo código de cor desejado */
+    background-color: #0187a7; 
   }
 .card {
 
-    width: 600px; /* Substitua pelo valor desejado */
+    width: 600px; 
     margin-left: auto;
     margin-right: auto;
     border: 2px solid black;
@@ -23,7 +23,7 @@
 
   .botoes-container {
     display: flex;
-    justify-content: space-between; /* Alinha os botões lado a lado com espaço entre eles */
+    justify-content: space-between; 
   }
   
   .meu-botao {
@@ -36,7 +36,7 @@
     margin-right: 8px;
     font-size: 12px;
     font-family: 'Inter', sans-serif;
-    margin-right: 10px; /* Espaçamento entre os botões, ajuste conforme necessário */
+    margin-right: 10px; 
   }
   
 
@@ -53,8 +53,8 @@
   }
 
   .btn-primary{
-    width: 25%; /* Defina o tamanho desejado */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 25%; 
+    margin: 0 auto; 
     background-color: #016d88
 }
 .meu-botao:hover {
