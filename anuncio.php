@@ -5,16 +5,25 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="anuncio.css">
     <title>TCC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <header>
         <nav class="nav-bar">
             <div class="logo">
@@ -50,43 +59,58 @@
         </div>
 
     </header>
-
-    <div>
-        <div>
-            <a href="criaranuncio.php">Novo Anúncio</a>
-        </div>
-    </div>
-
-    <div>
-        <?php
+    <div class="fundo">
+    <br><br><br><br>
+    
+        <div class="card">
+            <div class="card-header"></div>
+            <div class="card-body">
+                <?php
         $sql = "SELECT * FROM anuncio";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                echo $row->nome;
-                echo $row->endereco;
-                echo $row->idade;
-                echo $row->sexo;
-                echo $row->porte;
-                echo $row->raca;
-                echo $row->cor;
-                echo $row->enfermidade;
-                echo $row->fotoanuncio;
+                echo $row->nome . "<br>";
+                echo $row->endereco . "<br>";
+                echo $row->idade . " anos <br>";
+                echo $row->sexo . "<br>";
+                echo $row->porte . "<br>";
+                echo $row->raca . "<br>";
+                echo $row->cor . "<br>";
+                echo $row->enfermidade . "<br><br>";
+                echo $row->fotoanuncio . "<br><br>";
 
-                echo "<button onclick=\"location.href='editarusuario.php?id=".$row->id."';\">Editar</button>";
-                echo "<button onclick=\"if(confirm('Tem certeza que deseja excluir o anúncio?')){location.href='exluiranuncio.php?id=".$row->id."';}else{false;}\">Excluir</button>";
+                echo '<div class="botoes-container">';
+                echo '<button class="meu-botao" onclick="location.href=\'editarusuario.php?id='.$row->id.'\';">Editar</button>';
+                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
+                echo '</div>';
+                
             }
         } else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
-    </div>
-    
-    <br><br><br><br><br><br><br><br>
-    <br>
+            </div>
+        </div>
 
+        <br><br><br><br>
+
+        <div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="criaranuncio.php" class="btn btn-primary">
+                    <img src="sinal.png" alt="sinal de mais" width="25" height="25">
+                </a>
+                <p class="criar-anun">
+                    criar novo anúncio
+                </p>
+            </div>
+
+        </div>
+
+        <br><br><br><br>
+    </div>
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
@@ -127,4 +151,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

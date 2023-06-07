@@ -1,0 +1,98 @@
+.fundo {
+    background-color: #0187a7; /* Substitua pelo código de cor desejado */
+  }
+.card {
+
+    width: 600px; /* Substitua pelo valor desejado */
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+  }
+
+  .botoes-container {
+    display: flex;
+    justify-content: space-between; /* Alinha os botões lado a lado com espaço entre eles */
+  }
+  
+  .meu-botao {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 1px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    margin-right: 10px; /* Espaçamento entre os botões, ajuste conforme necessário */
+  }
+  
+
+  .meu-botao:hover {
+    background-color: #0056b3;
+  }
+
+  .meu-botao.excluir {
+    background-color: #dc3545;
+  }
+
+  .meu-botao.excluir:hover {
+    background-color: #a71d2a;
+  }
+
+  .btn-primary{
+    width: 25%; /* Defina o tamanho desejado */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    background-color: #016d88
+}
+.meu-botao:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-custom {
+    background-color: #c9c9c9;
+    color: white;
+  }
+  
+  a.btn.btn-primary {
+    background-color: #4267b3;
+    color: white;
+    border: none;
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 15px;
+    text-decoration: none;
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+    
+  }
+  .criar-anun{
+    margin: 0 auto;
+    font-size: 12px;
+    margin-top: 2%;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    
+  }
+
+ 
+  
+  
+ 
+  
+  
