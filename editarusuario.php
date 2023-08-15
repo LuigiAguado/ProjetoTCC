@@ -40,7 +40,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="#">Entrar</a></button>
+                <button><a href="login.php">Entrar</a></button>
             </div>
         </div>
     </header>

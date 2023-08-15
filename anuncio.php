@@ -41,7 +41,7 @@
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="#">Entrar</a></button>
+                <button><a href="login.php">Entrar</a></button>
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
