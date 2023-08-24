@@ -65,52 +65,33 @@
             <div class="card-header"></div>
             <div class="card-body">
                 <?php
-        $sql = "SELECT * FROM anuncio";
+        $sql = "SELECT * FROM usuario";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
                 echo $row->nome . "<br>";
+                echo $row->email . "<br>";
+                echo $row->cpf . " anos <br>";
                 echo $row->endereco . "<br>";
-                echo $row->idade . " anos <br>";
-                echo $row->sexo . "<br>";
-                echo $row->porte . "<br>";
-                echo $row->raca . "<br>";
-                echo $row->cor . "<br>";
-                echo $row->enfermidade . "<br><br>";
-                echo $row->fotoanuncio . "<br><br>";
+                echo $row->telefone . "<br>";
+                echo $row->senha . "<br>";
+                echo $row->fotousu . "<br>";
 
                 echo '<div class="botoes-container">';
-                echo '<button class="meu-botao" onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
-                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
+                echo '<button class="meu-botao" onclick="location.href=\'editarusuario.php?id='.$row->cpf.'\';">Editar</button>';
+                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->cpf.'\';}else{false;}">Excluir</button>';
                 echo '</div>';
                 
             }
-        } else {
-            echo "<p>Não existem anúncios.</p>";
-        }
+        } 
         ?>
             </div>
         </div>
 
         <br><br>
 
-        <div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <p class="criar-anun" style="font-size: 2rem; color: #fff;">
-                    Criar novo anúncio
-                </p>
-                <a href="criaranuncio.php" class="btn btn-primary">
-                    <img src="img/sinal2.png" alt="+" width="25" height="25">
-                </a>
-                <br>
-            </div>
-
-        </div>
-
-        <br><br><br><br>
-    </div>
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">

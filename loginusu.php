@@ -1,44 +1,63 @@
 <?php
-require 'configlog.php';
+include('config.php');
 
-if(isset($_POST["submit"])){
-    $logemail = $_POST["logemail"];
-    $senha = $_POST["senha"];
-    $result = mysqli_query($connect, "SELECT * FROM usuario WHERE email = '$logemail'");
-    $row = mysqli_fetch_assoc($result);
-    if(mysqli_num_rows($result) > 0){
-        if($senha == $row["senha"]){
-            $_session["login"] = true;
-            $_session["id"] = $row["id"];
-            header("Location: index.php");
-        }else{
-        echo
-        "<script> alert('Senha errada') </script>";
+if(isset($_POST['email']) || isset($_POST['senha'])) {
+
+    if(strlen($_POST['email']) == 0) {
+        echo "Preencha seu e-mail";
+    } else if(strlen($_POST['senha']) == 0) {
+        echo "Preencha sua senha";
+    } else{
+
+        $email = $conn->real_escape_string($_POST['email']);
+        $senha = $conn->real_escape_string($_POST['senha']);
+
+        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+        $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $conn->error);
+
+        $quantidade = $sql_query->num_rows;
+
+        if($quantidade == 1) {
+            
+            $usuario = $sql_query->fetch_assoc();
+
+            if(!isset($_SESSION)) {
+                session_start();
+            }
+
+            $_SESSION['nome'] = $usuario['nome'];
+
+            header("Localização: index.html");
+
+        } else {
+            echo "Falha ao logar! E-mail ou senha incorreta";
         }
-    }else{
-        echo
-        "<script> alert('Usuário não cadastrado') </script>";
-    }
- }
-?>
 
+    }
+
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
 </head>
 <body>
-    <h2>login</h2>
-    <form action="" class="" mathod="post" autocomplete="off">
-        <label for="logemail">Email :</label>
-        <input type="email" name="logemail" id="logemail" required value=""> <br>
-        <label for="senha">Senha: </label>
-        <input type="password" name="senha" id = "senha" required value=""> <br>
-        <button type="submit" name="submit">Login</button>
+    <h1>Acesse sua conta:</h1>
+    <form action="" method="POST">
+    <p>      
+        <label for="">Email:</label>
+        <input type="text" name="email">
+    </p>  
+    <p>
+        <label for="">Senha:</label>
+        <input type="password" name="senha">
+    </p>
+    <p>
+        <button type="submit">Entrar</button>
+    </p>
     </form>
-    <br>
-    <a href="registrarusu.php">Cadastre-se</a>
 </body>
 </html>
