@@ -80,8 +80,8 @@
                 echo $row->fotousu . "<br>";
 
                 echo '<div class="botoes-container">';
-                echo '<button class="meu-botao" onclick="location.href=\'editarusuario.php?id='.$row->cpf.'\';">Editar</button>';
-                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->cpf.'\';}else{false;}">Excluir</button>';
+                echo '<button class="meu-botao" onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';
+                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'excluiriusu.php?cpf='.$row->cpf.'\';}else{false;}">Excluir</button>';
                 echo '</div>';
                 
             }
