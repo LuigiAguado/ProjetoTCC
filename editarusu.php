@@ -23,7 +23,7 @@
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -80,6 +80,7 @@
         } 
     }
 ?>
+
 <div id="formulario">
 <div class="tituloform">Atualizar Perfil</div>
 <form action="?page=editarusu&cpf=<?php echo $_REQUEST["cpf"]; ?>" method="POST">
@@ -96,7 +97,7 @@
     </div>
     <div class="infoform">
         <label class="letraform">CPF</label>
-        <input type="number" id="cpf" name="cpf" min="0" value="<?php echo $row->cpf; ?>" required>
+        <input type="number" id="cpf" name="cpf" min="0" value="<?php echo $row->cpf; ?>" disabled>
     </div>
     <div class="infoform">
         <label class="letraform">Endereço</label>
@@ -113,7 +114,10 @@
     </div>
     <div id="fotoanimalform">
     <div>
-        <label>Foto do usuário</label>
+        <div>
+       <img src="choose.png" id="img" height="200" width="200"> 
+        </div>
+        <label>Foto do usuário: </label>
         <input type="file" name="fotousu" id="fotousu" accept="image/*">
     </div>
     </div>
@@ -123,6 +127,15 @@
 </form>
 </div>
 </div>
+<script>
+let img = document.getElementById('img');
+let input = document.getElementById('fotousu')
+
+input.onchange = (e) => {
+    if (input.files[0])
+        img.src = URL.createObjectURL(input.files[0]);
+};
+</script>
 </body>
 <footer>
         <div id="footer_content">
@@ -154,10 +167,7 @@
                 <p>
                     Caso tenha alguma pergunta, clique no botão a baixo.
                 </p>
-
-                    <button id="duvidasbutton">
-                        <i class="fa-solid fa-question"></i>
-                    </button>
+                        <a href="contato.php" id="duvidasbutton">?</a>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
                     <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" style="color: #fff;">Contato</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -48,9 +48,9 @@
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Adote</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
                 <button><a href="ecolhalogin.php">Entrar</a></button>
@@ -77,12 +77,12 @@
                 echo $row->endereco . "<br>";
                 echo $row->telefone . "<br>";
                 echo $row->senha . "<br>";
-                echo $row->fotousu . "<br>";
+                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'."<br>";
 
                 echo '<div class="botoes-container">';
                 echo '<button class="meu-botao" onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';
                 echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'excluiriusu.php?cpf='.$row->cpf.'\';}else{false;}">Excluir</button>';
-                echo '</div>';
+                echo '</div>'. "<br>";
                 
             }
         } 
@@ -92,7 +92,7 @@
 
         <br><br>
 
-    <footer>
+        <footer>
         <div id="footer_content">
             <div id="footer_contacts">
                 <p>
@@ -103,30 +103,33 @@
             </div>
 
             <div id="footer_social_media">
-                <a href="#" class="footer-link" id="instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
 
-                <a href="#" class="footer-link" id="facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
 
-                <a href="#" class="footer-link" id="whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
 
             <div id="footer_subscribe">
                 <h3>Dúvidas</h3>
 
                 <p>
-                    Caso tenha alguma pergunta, clique no botão abaixo.
+                    Caso tenha alguma pergunta, clique no botão a baixo.
                 </p>
-
-                <button id="duvidasbutton">
-                    <i class="fa-solid fa-question"></i>
-                </button>
+                        <a href="contato.php" id="duvidasbutton">?</a>
+                </div>
             </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2023 all rights reserved
         </div>
     </footer>
 

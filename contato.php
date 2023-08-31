@@ -22,7 +22,7 @@
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
                 </ul>
@@ -36,7 +36,7 @@
         
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
+            <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
             </ul>
@@ -45,36 +45,12 @@
             </div>
         </div>
     </nav>
-    </header>
+    <div id="cor">
     <div id="conteudo">
-        <div class="resumovideo">
-            <div class="imgdog">
-                <img class="imgdogtam" src="img/Pegadas.png">
-            </div>
-            <div class="video">
-                <video class="contvideo" src="vid/teste.mp4" controls poster="img/Dog.jpg"></video>
-            </div>
-            <div class="imgdog">
-                <img class="imgdogtam" src="img/Pegadas2.png">
-            </div>
-        </div>
-        <div id="sobretxt">
-        <div class="resumotxt">
-            <div class="imgdogres">
-                <img class="imgdogrestam" src="img/cachorro3.png">
-            </div>
-            <div class="resumotexto">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo praesentium vitae sequi accusantium suscipit quam enim odio modi, quisquam quaerat minus voluptas et expedita reprehenderit. Saepe unde impedit distinctio!</p>
-            </div>
-        </div>
-        </div>
 
-
-
-
-
-
-    </div>
+<h1>Página de contato</h1>
+</div>
+</div>
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">

@@ -22,9 +22,9 @@
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -36,12 +36,12 @@
         
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Adote</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="login.php">Entrar</a></button>
+                <button><a href="ecolhalogin.php">Entrar</a></button>
             </div>
         </div>
     </nav>
@@ -94,10 +94,7 @@
                 <p>
                     Caso tenha alguma pergunta, clique no botão a baixo.
                 </p>
-
-                    <button id="duvidasbutton">
-                        <i class="fa-solid fa-question"></i>
-                    </button>
+                        <a href="contato.php" id="duvidasbutton">?</a>
                 </div>
             </div>
         </div>
@@ -107,7 +104,3 @@
             2023 all rights reserved
         </div>
     </footer>
-    <script src="js/script.js"></script>
-</body>
-
-</html>

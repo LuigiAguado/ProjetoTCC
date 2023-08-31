@@ -129,6 +129,10 @@ header{
     min-height: 72.5vh;
 }
 
+#cor{
+    background-color: #016d88;
+}
+
 .contvideo{
     width: 40rem;
     position: relative;
@@ -381,4 +385,67 @@ form #buttoncriar{
         max-height: 300px;
         overflow-y: scroll;
     }
+}
+
+/* CONTEUDO PÁGINA ADOTE */
+
+.conteudoadote{
+    height: 100vh;
+    padding: 32px;
+    display: grid;
+    place-items: center;
+    background-color: var(--background);
+    background-color: #016d88;
+}
+
+.galeria{
+    display: flex;
+    background-color: var(--background);
+    gap: 16px;
+}
+.cartao{
+    position: relative;
+    left: 0px;
+    width: 240px;
+    height: 260px;
+    background-color: var(--background);
+    border-radius: 8px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    outline: 1px solid var(--background);
+    overflow: hidden;
+}
+
+.cartao img{
+    height: 160;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cartao:hover{
+    transform: scale(1.15);
+}
+
+.cartao:hover figcaption{
+    font-size: 0.6rem;
+    position: absolute;
+    height: 80px;
+    width: 260px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+    );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+
+.cartao:hover ~ .cartao{
+    font-weight: bold;
+    transform: translateX(22px);
 }

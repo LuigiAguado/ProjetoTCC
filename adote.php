@@ -1,30 +1,36 @@
+<?php
+    include("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/logofooter.ico" type="image/x-icon" />
     <title>TCC</title>
 </head>
 
 <body>
-    <header cl>
+    <header>
         <nav class="nav-bar">
             <div class="logo">
-            <p>
-                <a href="index.html">
-                    <img class="logotam" src="img/amordepatas.png">
-                </a>
-            </p>
+                <p>
+                    <a href="index.html">
+                        <img class="logotam" src="img/amordepatas.png">
+                    </a>
+                </p>
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -33,47 +39,58 @@
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
             </div>
-        
+        </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
-                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
+                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
                 <button><a href="ecolhalogin.php">Entrar</a></button>
             </div>
         </div>
-    </nav>
+
     </header>
-    <div id="conteudo">
-        <div class="resumovideo">
-            <div class="imgdog">
-                <img class="imgdogtam" src="img/Pegadas.png">
-            </div>
-            <div class="video">
-                <video class="contvideo" src="vid/teste.mp4" controls poster="img/Dog.jpg"></video>
-            </div>
-            <div class="imgdog">
-                <img class="imgdogtam" src="img/Pegadas2.png">
-            </div>
-        </div>
-        <div id="sobretxt">
-        <div class="resumotxt">
-            <div class="imgdogres">
-                <img class="imgdogrestam" src="img/cachorro3.png">
-            </div>
-            <div class="resumotexto">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo praesentium vitae sequi accusantium suscipit quam enim odio modi, quisquam quaerat minus voluptas et expedita reprehenderit. Saepe unde impedit distinctio!</p>
-            </div>
-        </div>
-        </div>
+    <div  class="conteudoadote">
+    <div class="galeria">
+        <article class="cartao">
+            <figure>
+            <?php
+        $sql = "SELECT * FROM anuncio";
+        $res = $conn->query($sql);
+        $qtd = $res->num_rows;
 
+        if ($qtd > 0) {
+            while ($row = $res->fetch_object()) {
 
+                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">';
+            }
+        }else {
+            echo "<p>Não existem anúncios.</p>";
+        }
+        ?>
+        <figcaption>
+        <?php
+        $sql = "SELECT * FROM anuncio";
+        $res = $conn->query($sql);
+        $qtd = $res->num_rows;
 
+        if ($qtd > 0) {
+            while ($row = $res->fetch_object()) {
+                echo $row->nome . "<br>";
+                echo $row->endereco . "<br>";
+            }
+        }else {
+            echo "<p>Não existem anúncios.</p>";
+        }
+        ?>
+        </figcaption>
+            </figure>
 
+        </article>
 
-
+    </div>
     </div>
     <footer>
         <div id="footer_content">
@@ -115,6 +132,7 @@
             2023 all rights reserved
         </div>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 
