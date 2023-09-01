@@ -22,12 +22,12 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
@@ -36,14 +36,16 @@
         <div class="mobile-menu">
             <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
         </div>
     </header>
+    <div style="background: linear-gradient(135deg, #0187a7, #016d88);">
+    <br><br><br><br><br>
     <div id="contform">
 <?php
 include("config.php");
@@ -111,14 +113,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     <div id="fotoanimalform">
     <div>
         <div>
-       <img src="choose.png" id="img" height="200" width="200"> 
+       <img src="choose.png" id="img" height="150" width="150"> 
         </div>
         <label>Foto do Usuário: </label>
         <input type="file" name="fotousu" id="fotousu" accept="image/*">
     </div>
     </div>
     <div>
-        <button id="buttoncriar" type="submit">Editar</button>
+        <button id="buttoncriar" type="submit">Criar</button>
     </div>
     <script>
 let img = document.getElementById('img');
@@ -131,10 +133,9 @@ input.onchange = (e) => {
 </script>
 </form>
 </div>
-<div>
 </div>
+<br><br><br><br><br>
 </div>
-</body>
 <footer>
         <div id="footer_content">
             <div id="footer_contacts">

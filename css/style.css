@@ -180,6 +180,13 @@ header{
     font-size: 2rem;
 }
 
+#naocadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 /* FOOTER */
 
 footer{
@@ -290,7 +297,7 @@ footer{
     }
 }
 
-/* Formulário */
+/* Formulário */    
 
 #contform{
     display: flex;

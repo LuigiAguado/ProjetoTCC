@@ -35,12 +35,12 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link" style="color: #fff;">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
@@ -49,11 +49,11 @@
         <div class="mobile-menu">
             <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link" style="color: #fff;">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
                 echo $row->endereco . "<br>";
                 echo $row->telefone . "<br>";
                 echo $row->senha . "<br>";
-                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'."<br>";
+                echo '<img src="img/'.$row->fotousu.'" width = "200">'."<br>";
 
                 echo '<div class="botoes-container">';
                 echo '<button class="meu-botao" onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';

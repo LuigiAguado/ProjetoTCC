@@ -35,12 +35,12 @@
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link" style="color: #fff;">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
@@ -49,11 +49,11 @@
         <div class="mobile-menu">
             <ul>
                     <li class="nav-item"><a href="index.html#sobretxt" class="nav-link" style="color: #fff;">Sobre</a></li>
-                    <li class="nav-item"><a href="anuncio.php" class="nav-link" style="color: #fff;">Adote</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link" style="color: #fff;">Adote</a></li>
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="ecolhalogin.php">Entrar</a></button>
+                <button><a href="loginusu.php">Entrar</a></button>
             </div>
         </div>
 
@@ -71,16 +71,16 @@
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-            
-                echo $row->nome . "<br>";
-                echo $row->endereco . "<br>";
-                echo $row->idade . " anos <br>";
-                echo $row->sexo . "<br>";
-                echo $row->porte . "<br>";
-                echo $row->raca . "<br>";
-                echo $row->cor . "<br>";
-                echo $row->enfermidade . "<br><br>";
+                
                 echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'."<br>";
+                echo "Nome: " . $row->nome . "<br>";
+                echo "Endereço: " .$row->endereco . "<br>";
+                echo "Idade: " .$row->idade . " anos <br>";
+                echo "Sexo: " .$row->sexo . "<br>";
+                echo "Porte: " .$row->porte . "<br>";
+                echo "Raça: " .$row->raca . "<br>";
+                echo "Cor: " .$row->cor . "<br>";
+                echo "Enfermidade: " .$row->enfermidade . "<br><br>";
 
                 echo '<div class="botoes-container">';
                 echo '<button class="meu-botao" onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
