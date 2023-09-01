@@ -71,12 +71,11 @@
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                echo $row->nome . "<br>";
-                echo $row->email . "<br>";
-                echo $row->cpf . " anos <br>";
-                echo $row->endereco . "<br>";
-                echo $row->telefone . "<br>";
-                echo $row->senha . "<br>";
+                echo "Nome: ". $row->nome . "<br>";
+                echo "Email: ".$row->email . "<br>";
+                echo "CPF: ".$row->cpf . " anos <br>";
+                echo "Endereço: ".$row->endereco . "<br>";
+                echo "Telefone: ".$row->telefone . "<br>";
                 echo '<img src="img/'.$row->fotousu.'" width = "200">'."<br>";
 
                 echo '<div class="botoes-container">';
