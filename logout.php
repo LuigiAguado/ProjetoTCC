@@ -5,5 +5,6 @@ if(!isset($_SESSION)) {
 }
 
 session_destroy();
+session_start();
 
 header("Location: index.html");

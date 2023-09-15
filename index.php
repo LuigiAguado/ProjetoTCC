@@ -1,65 +1,121 @@
-<?php
-include('config.php');
-
-if(isset($_POST['email']) || isset($_POST['senha'])) {
-
-    if(strlen($_POST['email']) == 0) {
-        echo "Preencha seu e-mail";
-    } else if(strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
-    } else {
-
-        $email = $conn->real_escape_string($_POST['email']);
-        $senha = $conn->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
-        $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $conn->error);
-
-        $quantidade = $sql_query->num_rows;
-
-        if($quantidade == 1) {
-            
-            $usuario = $sql_query->fetch_assoc();
-
-            if(!isset($_SESSION)) {
-                session_start();
-            }
-
-            $_SESSION['id'] = $usuario['cpf'];
-            $_SESSION['nome'] = $usuario['nome'];
-
-            header("Location: painel.php");
-
-        } else {
-            echo "Falha ao logar! E-mail ou senha incorretos";
-        }
-
-    }
-
-}
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logofooter.ico" type="image/x-icon" />
+    <title>TCC</title>
 </head>
+
 <body>
-    <h1>Acesse sua conta</h1>
-    <form action="" method="POST">
-        <p>
-            <label>E-mail</label>
-            <input type="text" name="email">
-        </p>
-        <p>
-            <label>Senha</label>
-            <input type="password" name="senha">
-        </p>
-        <p>
-            <button type="submit">Entrar</button>
-        </p>
-    </form>
+    <header cl>
+        <nav class="nav-bar">
+            <div class="logo">
+            <p>
+                <a href="index.html">
+                    <img class="logotam" src="img/amordepatas.png">
+                </a>
+            </p>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="loginusu.php">Entrar</a></button>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
+            </div>
+        
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#sobretxt" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="adote.php" class="nav-link">Adote</a></li>
+                    <li class="nav-item"><a href="contato.php" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="login-button">
+                <button><a href="loginusu.php">Entrar</a></button>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div id="conteudo">
+        <div class="resumovideo">
+            <div class="imgdog">
+                <img class="imgdogtam" src="img/Pegadas.png">
+            </div>
+            <div class="video">
+                <video class="contvideo" src="vid/teste.mp4" controls poster="img/Dog.jpg"></video>
+            </div>
+            <div class="imgdog">
+                <img class="imgdogtam" src="img/Pegadas2.png">
+            </div>
+        </div>
+        <div id="sobretxt">
+        <div class="resumotxt">
+            <div class="imgdogres">
+                <img class="imgdogrestam" src="img/cachorro3.png">
+            </div>
+            <div class="resumotexto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo praesentium vitae sequi accusantium suscipit quam enim odio modi, quisquam quaerat minus voluptas et expedita reprehenderit. Saepe unde impedit distinctio!</p>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <p>
+                    <a href="index.html">
+                        <img class="logofootertam" src="img/amordepatas.png">
+                    </a>
+                </p>
+            </div>
+
+            <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            <div id="footer_subscribe">
+                <h3>Dúvidas</h3>
+
+                <p>
+                    Caso tenha alguma pergunta, clique no botão a baixo.
+                </p>
+                        <a href="contato.php" id="duvidasbutton">?</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2023 all rights reserved
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
