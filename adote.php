@@ -7,7 +7,7 @@
 
             <?php
 
-        $sql = "SELECT fotoanuncio, nome, endereco FROM anuncio;";
+        $sql = "SELECT fotoanuncio, nome, endereco, id FROM anuncio;";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
@@ -20,6 +20,7 @@
                 echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'. '<br>';
                 echo $row->nome . "<br>";
                 echo $row->endereco . "<br>";
+                echo '<button onclick="location.href=\'perfildog.php?id='.$row->id.'\';">Detalhes</button>'. "<br>";
                ' <figcaption>';
                '</figcaption>';
                '</figure>';

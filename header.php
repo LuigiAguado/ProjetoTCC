@@ -17,7 +17,7 @@
         <nav class="nav-bar">
             <div class="logo">
                 <p>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img class="logotam" src="img/amordepatas.png">
                     </a>
                 </p>
@@ -44,7 +44,11 @@
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="loginusu.php">Entrar</a></button>
+                <div class="dropdown">
+                    <div class="contperfil">
+                <button><a href="loginusu.php"><?php include('protecet.php'); echo $_SESSION['nome']; ?></a></button>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -24,7 +24,7 @@
         <nav class="nav-bar">
             <div class="logo">
                 <p>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img class="logotam" src="img/amordepatas.png">
                     </a>
                 </p>
@@ -37,7 +37,7 @@
                 </ul>
             </div>
             <div class="login-button">
-                <button><a href="loginusu.php">Entrar</a></button>
+                <button><a href="loginusu.php"><?php include('protecet.php'); echo $_SESSION['nome']; ?></a></button>
             </div>
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="img/menubranco.svg"></button>
@@ -50,7 +50,7 @@
                     <li class="nav-item"><a href="contato.php" class="nav-link" style="color: #fff;">Contato</a></li>
             </ul>
             <div class="login-button">
-                <button><a href="loginusu.php">Entrar</a></button>
+                <button><a href="loginusu.php"><?php include('protecet.php'); echo $_SESSION['nome']; ?></a></button>
             </div>
         </div>
 

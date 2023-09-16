@@ -2,7 +2,7 @@
         <div id="footer_content">
             <div id="footer_contacts">
                 <p>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img class="logofootertam" src="img/amordepatas.png">
                     </a>
                 </p>
