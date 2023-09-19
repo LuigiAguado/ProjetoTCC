@@ -23,9 +23,6 @@ include('header.php');
             </div>
         </div>
         </div>
-        <p>
-        <a href="logout.php">Sair</a>
-    </p>
     </div>
     <?php
 include('footer.php');

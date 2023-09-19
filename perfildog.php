@@ -10,8 +10,9 @@ include ("config.php");
     $res = $conn->query($sql);
 
 ?>
-<div>
-<div>
+<div id="cor">
+    <br><br><br><br>
+<div id="perfildog">
 <?php
 
 if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
@@ -23,10 +24,11 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                
-                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'."<br>";
-                echo "Nome: " . $row->nome . "<br>";
-                echo "Endereço: " .$row->endereco . "<br>";
+                ?><div id="imgperfildog"><?php
+                echo '<img src="img/'.$row->fotoanuncio.'" width = "300">';
+                ?></div><div id="descdog"><?php
+                echo "<h1>". $row->nome. "</h1>" . "<br>";
+                echo "<h2>".$row->endereco. "</h2>" . "<br>";
                 echo "Idade: " .$row->idade . " anos <br>";
                 echo "Sexo: " .$row->sexo . "<br>";
                 echo "Porte: " .$row->porte . "<br>";
@@ -38,9 +40,12 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
         }
     }
         ?>
+        </div>
 </div>
 Estou interesado:
-<button> Adotar</button>
+<button id="buttoncriar"> Adotar</button>
+<br><br><br><br>
+</div>
 </div>
 
 <?php

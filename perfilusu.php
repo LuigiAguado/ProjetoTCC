@@ -2,15 +2,11 @@
     include("config.php");
 ?>
 <?php
-    include("headerbo.php");
+    include("header.php");
 ?>
+<div id="cor">
 
-    <div class="fundo">
-    <br><br><br><br>
-    
-        <div class="card">
-            <div class="card-header"></div>
-            <div class="card-body">
+
                 <?php
         $sql = "SELECT * FROM usuario";
         $res = $conn->query($sql);
@@ -18,25 +14,28 @@
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                echo "Nome: ". $row->nome . "<br>";
+                ?><div class="perfilusu"> <?php
+
+                echo '<img src="img/'.$row->fotousu.'" width = "200">';
+
+                ?></div> <div class="perfilusu"><?php
+                echo '<h1>'. $row->nome. '</h1>' . "<br>";
+                ?></div> <div class="perfilusu"><?php
                 echo "Email: ".$row->email . "<br>";
-                echo "CPF: ".$row->cpf . " anos <br>";
+                echo "CPF: ".$row->cpf . " <br>";
                 echo "Endereço: ".$row->endereco . "<br>";
                 echo "Telefone: ".$row->telefone . "<br>";
-                echo '<img src="img/'.$row->fotousu.'" width = "200">'."<br>";
-
-                echo '<div class="botoes-container">';
-                echo '<button class="meu-botao" onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';
-                echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'excluiriusu.php?cpf='.$row->cpf.'\';}else{false;}">Excluir</button>';
-                echo '</div>'. "<br>";
                 
+                ?></div><div class="perfilusu"> <?php
+                echo '<button onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';
+                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'excluiriusu.php?cpf='.$row->cpf.'\';}else{false;}">Excluir</button>';
+                echo '<button href="logout.php">Sair</button>';
             }
         } 
-        ?>
+        ?>  
+        </div>  
             </div>
-        </div>
-
-        <br><br>
+</div>
         <?php
     include("footer.php");
 ?>

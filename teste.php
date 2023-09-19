@@ -1,9 +1,6 @@
 <?php
     include("config.php");
 ?>
-<?php
-    include("header.php");
-?>
 <div id="cor">
             <?php
 
@@ -32,7 +29,3 @@
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
-
-<?php
-    include("footer.php");
-?>
