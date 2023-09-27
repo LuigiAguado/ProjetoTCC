@@ -12,7 +12,9 @@ include ("config.php");
 ?>
 <div id="cor">
     <br><br><br><br>
+    <div id="boxdog">
 <div id="perfildog">
+
 <?php
 
 if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
@@ -35,18 +37,18 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
                 echo "Raça: " .$row->raca . "<br>";
                 echo "Cor: " .$row->cor . "<br>";
                 echo "Enfermidade: " .$row->enfermidade . "<br><br>";
-
+                ?>
+                Ficou interesado?
+                <button id="buttoncriar"> Adotar</button>
+                <?php
             }
         }
     }
         ?>
         </div>
 </div>
-Estou interesado:
-<button id="buttoncriar"> Adotar</button>
-<br><br><br><br>
 </div>
-</div>
+<br><br>
 
 <?php
     include("footer.php");

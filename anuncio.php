@@ -2,7 +2,7 @@
     include("config.php");
 ?>
 <?php
-    include("headerbo.php");
+    include("header.php");
 ?>
     <div class="fundo">
     <br><br><br><br>
@@ -17,24 +17,23 @@
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                
-                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">'."<br>";
-                echo "Nome: " . $row->nome . "<br>";
-                echo "Endereço: " .$row->endereco . "<br>";
+                ?><div id="imgperfildog"><?php
+                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">';
+                ?></div><div id="descdog"><?php
+                echo "<h1>". $row->nome. "</h1>" . "<br>";
+                echo "<h2>".$row->endereco. "</h2>" . "<br>";
                 echo "Idade: " .$row->idade . " anos <br>";
                 echo "Sexo: " .$row->sexo . "<br>";
                 echo "Porte: " .$row->porte . "<br>";
                 echo "Raça: " .$row->raca . "<br>";
                 echo "Cor: " .$row->cor . "<br>";
                 echo "Enfermidade: " .$row->enfermidade . "<br><br>";
-
-                echo '<div class="botoes-container">';
+                echo '<div class="buttoncriar">';
                 echo '<button class="meu-botao" onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
                 echo '<button class="meu-botao excluir" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
                 echo '</div>'."<br>";
-                
             }
-        } else {
+        }else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
