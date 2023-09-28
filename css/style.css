@@ -54,6 +54,7 @@ header{
 .login-button{
     display: flex;
     align-items: center;
+    color: #fff;
 }
 
 .login-button button{
@@ -284,44 +285,40 @@ form #buttoncriar{
     }
 }
 
+/* PÁGINA ADOTE */
 
-#adoteall {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    gap: 16px;
+.cardadote {
+    background-color: #ffffff; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-.cardadote{
-    background-color: #4a4b50;
-    width: 180px;
-    height: 260px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 12px #fff;
+.cardadote img {
+    max-width: 100%;
 }
 
-.cardadote h2{
-    font-size: 1.9rem;
-    color: #fff;
+.cardadote h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
-.cardadote h3{
-    font-size: 1.2rem;
-    color: #fff;
-}
-.cardadote button{
-    background-color: #016d88;
-    height: 30px;
-    border: none;
-    padding: 4px;
-    width: 80%;
-    color: #fff;
+.cardadote h3 {
     font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
+    margin: 10px 0;
 }
+
+.cardadote a {
+    text-decoration: none;
+    color: #333;
+}
+
+.cardadote a:hover {
+    color: #007bff;
+} 
 
 
 /* CONTEUDO PÁGINA PERFIL DOG */
@@ -539,4 +536,65 @@ form #buttoncriarc{
         max-height: 300px;
         overflow-y: scroll;
     }
+}
+
+/* CONTEUDO PÁGINA DOG ONG  */
+
+    .anunciopage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    }
+
+/* CONTEUDO PÁGINA PERFIL USU */
+
+.perfilusu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    padding: 1rem;
+    
+}
+
+.perfilusu img{
+    border-radius: 50%;
+
+    border: 0.6rem solid #017f9e;
+}
+
+#caixaperfil{
+    width: 40rem;
+    height: 50rem;
+    background: #fff;
+    border-radius: 8px;
+    padding-top: 1rem;
+}
+
+#comperfil{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfilusu button{
+    margin: 3px;
+    margin-top: 27px;
+    margin-bottom: 7px;
+    padding: 10px;
+    height: 45px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(135deg, #0187a7, #016d88);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
 }
