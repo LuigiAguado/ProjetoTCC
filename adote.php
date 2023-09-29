@@ -5,6 +5,8 @@
     include("header.php");
 ?>
 <div id="cor">
+
+    <div id="adotetudo">
             <?php
 
         $sql = "SELECT fotoanuncio, nome, endereco, id FROM anuncio;";
@@ -25,12 +27,14 @@
             ?> 
             </div>
 </div>
+</div>
 
             <?php
         }else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
+        </div>
 </div>
 <?php
     include("footer.php");
