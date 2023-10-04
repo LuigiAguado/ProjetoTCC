@@ -11,7 +11,7 @@
             $deleteSql = "DELETE FROM usuario WHERE cpf = $cpf";
             if ($conn->query($deleteSql) === true) {
                 echo "peril excluído com sucesso.";
-                header("Location: index.html");
+                header("Location: index.php");
             } else {
                 echo "Erro ao excluir o perfil: " . $conn->error;
             }

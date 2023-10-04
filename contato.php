@@ -3,7 +3,6 @@
 ?>
 
 <div class="h1contatoc">
-<h1>Possui alguma dúvida?</h1>
 </div>
 <div id="contformc">
 

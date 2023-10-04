@@ -25,5 +25,6 @@ include('header.php');
         </div>
     </div>
     <?php
+    echo '<button onclick="location.href=\'logout.php\';">Sair</button>';
 include('footer.php');
 ?>

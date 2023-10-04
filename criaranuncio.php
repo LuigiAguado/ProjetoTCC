@@ -1,8 +1,9 @@
 <?php
     include("header.php");
 ?>
-    <div style="background: linear-gradient(135deg, #0187a7, #016d88);">
-    <br><br><br><br><br>
+    <div id="cor">
+    <br><br><br><br><br><br><br><br><br>
+    <div id="espaco">
     <div id="contform">
 <?php
 include("config.php");
@@ -11,6 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     
     $nome = $_POST["nome"];
     $endereco = $_POST["endereco"];
+    $estado = $_POST["estado"];
+    $cidade = $_POST["cidade"];
+    $cep = $_POST["cep"];
+    $bairro = $_POST["bairro"];
+    $numero = $_POST["numero"];
     $idade = $_POST["idade"];
     $sexo = $_POST["sexo"];
     $porte = $_POST["porte"];
@@ -19,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     $enfermidade = $_POST["enfermidade"];
     $fotoanuncio = $_POST["fotoanuncio"];
 
-    $sql = "INSERT INTO anuncio (nome, endereco, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
+    $sql = "INSERT INTO anuncio (nome, endereco, estado, cidade, cep, bairro, numero, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
 
     if ($conn->query($sql) === true) {
         echo "Anúncio criado com sucesso.";
@@ -40,12 +46,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         <input type="text" name="nome" placeholder="Insira o nome do animal" required>
     </div>
     <div class="infoform">
-        <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" placeholder="Insira a localização do animal" required>
+        <label class="letraform">Estado</label>
+        <input type="text" name="estado" placeholder="Insira o estado do animal" required>
     </div>
     <div class="infoform">
-        <label class="letraform">Idade (Aproximada)</label>
-        <input type="number" id="idadeseta" name="idade" value="0" min="0">
+        <label class="letraform">Cidade</label>
+        <input type="text" name="cidade" placeholder="Insira a cidade do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Bairro</label>
+        <input type="text" name="bairro" placeholder="Insira o bairro do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Endereço</label>
+        <input type="text" name="endereco" placeholder="Insira o endereço do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Número</label>
+        <input type="number" name="numero" placeholder="Insira o numero do endereço do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">CEP</label>
+        <input type="number" name="cep" placeholder="Insira o CEP do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Data de nascimento</label>
+        <input type="date" id="idadeseta" name="idade">
     </div>
     <div class="infoform">
         <label class="letraform">Sexo</label>
@@ -74,15 +100,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
        <img src="choose.png" id="img" height="200" width="200"> 
         </div>
         <label>Foto do animal: </label>
-        <input type="file" name="fotousu" id="fotousu" accept="image/*">
+        <input type="file" name="fotoanuncio" id="fotoanuncio" accept="image/*">
     </div>
     </div>
     <div>
-        <button id="buttoncriar" type="submit">Editar</button>
+        <button id="buttoncriar" type="submit">Criar</button>
     </div>
     <script>
 let img = document.getElementById('img');
-let input = document.getElementById('fotousu')
+let input = document.getElementById('fotoanuncio')
 
 input.onchange = (e) => {
     if (input.files[0])
@@ -92,7 +118,8 @@ input.onchange = (e) => {
 </form>
 </div>
 </div>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+</div>
 </div>
 <?php
     include("footer.php");

@@ -27,15 +27,13 @@
             ?> 
             </div>
 </div>
-</div>
-
             <?php
         }else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
         </div>
-</div>
+        </div>
 <?php
     include("footer.php");
 ?>

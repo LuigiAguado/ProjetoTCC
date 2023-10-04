@@ -11,10 +11,10 @@
 
 
                 <?php
-    if (isset($_REQUEST["cpf"]) && !empty($_REQUEST["cpf"])) {
-        $cpf = $_REQUEST["cpf"];
+    if (isset($_REQUEST["CNPJ"]) && !empty($_REQUEST["CNPJ"])) {
+        $cpf = $_REQUEST["CNPJ"];
 
-        $sql = "SELECT * FROM usuario WHERE cpf=" . $cpf;
+        $sql = "SELECT * FROM usuario WHERE CNPJ=" . $CNPJ;
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
@@ -25,10 +25,11 @@
                 echo '<img src="img/'.$row->fotousu.'" width = "200">';
 
                 ?></div> <div class="perfilusu"><?php
-                echo '<h1>'. $row->nome. '</h1>' . "<br><br>";
+                echo '<h1>'. $row->nomef. '</h1>' . "<br><br>";
                 ?></div> <div class="perfilusu"><?php
+                echo "Razão Social: ".$row->razao . "<br><br>";
                 echo "Email: ".$row->email . "<br><br>";
-                echo "CPF: ".$row->cpf . " <br><br>";
+                echo "CNPJ: ".$row->CNPJ . " <br><br>";
                 echo "Estado: ".$row->estado . "<br><br>";
                 echo "Cidade: ".$row->cidade . "<br><br>";
                 echo "Bairro: ".$row->bairro . "<br><br>";
@@ -48,6 +49,7 @@
             </div>
 </div>
 <br><br><br><br><br>
+</div>
 </div>
 
         <?php

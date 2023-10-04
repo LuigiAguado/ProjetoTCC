@@ -1,8 +1,9 @@
 <?php
     include("header.php");
 ?>      
-    <div style="background: linear-gradient(135deg, #0187a7, #016d88);">
-    <br><br><br><br><br>
+    <div id="cor">
+    <br><br><br><br><br><br><br>
+    <div id="espaco">
     <div id="contform">
 <?php
     include ("config.php");
@@ -23,9 +24,14 @@
                 $telefone = $_POST["telefone"];
                 $senha = $_POST["senha"];
                 $endereco = $_POST["endereco"];
+                $estado = $_POST["estado"];
+                $cidade = $_POST["cidade"];
+                $cep = $_POST["cep"];
+                $bairro = $_POST["bairro"];
+                $numero = $_POST["numero"];
                 $fotousu = $_POST["fotousu"];
 
-                $sql = "UPDATE usuario SET cpf='{$cpf}', nome='{$nome}', email='{$email}', telefone='{$telefone}', senha='{$senha}', endereco='{$endereco}', fotousu='{$fotousu}' WHERE cpf='{$cpf}'";
+                $sql = "UPDATE usuario SET cpf='{$cpf}', nome='{$nome}', email='{$email}', telefone='{$telefone}', senha='{$senha}', endereco='{$endereco}', estado='{$estado}', cidade='{$cidade}', cep='{$cep}', bairro='{$bairro}', numero='{$numero}', fotousu='{$fotousu}' WHERE cpf='{$cpf}'";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Perfil atualizado com sucesso.";
@@ -59,8 +65,28 @@
         <input type="number" id="cpf" name="cpf" min="0" value="<?php echo $row->cpf; ?>" disabled>
     </div>
     <div class="infoform">
+        <label class="letraform">Estado</label>
+        <input type="text" name="estado" value="<?php echo $row->estado; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Cidade</label>
+        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Bairro</label>
+        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>">
+    </div>
+    <div class="infoform">
         <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" placeholder="Insira o seu endereço" value="<?php echo $row->endereco; ?>">
+        <input type="text" name="endereco" value="<?php echo $row->endereco; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Número</label>
+        <input type="number" name="numero" value="<?php echo $row->numero; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">CEP</label>
+        <input type="number" name="cep" value="<?php echo $row->cep; ?>">
     </div>
     <div class="infoform">
         <label class="letraform">Telefone</label>
@@ -86,7 +112,8 @@
 </form>
 </div>
 </div>
-<br><br><br><br>
+<br><br><br><br><br><br>
+</div>
 </div>
 <script>
 let img = document.getElementById('img');
