@@ -24,6 +24,38 @@ include('header.php');
         </div>
         </div>
     </div>
-    <?php
-include('footer.php');
-?>
+    <!-- Conteúdo da página -->
+
+    <div class="ong-div">
+        <div class="ong-text">
+            <p>Seja parte da nossa comunidade!</p>
+            <img src="img/amordepatas.png" alt="Imagem de uma ONG" />
+        </div>
+        <div class="ong-button">
+            <a href="contato.php" class="cadastro-button">É uma ONG? Venha se cadastrar!</a>
+        </div>
+    </div>
+
+    <div class="pessoa-div">
+    <div class="pessoa-text">
+        <p>Quer adotar um animal?</p>
+    </div>
+    <div class="animal-images">
+        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+
+    </div>
+    <div class="adotar-button">
+        <a href="contato.php" class="cadastro-button">Quer adotar? Se cadastre em nosso site!</a>
+    </div>
+</div>
+
+<?php include('footer.php'); ?>
+
+
+
+
+
+
+
