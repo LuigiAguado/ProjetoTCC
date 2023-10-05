@@ -1,41 +1,36 @@
 <?php
-    include("config.php");
+include("config.php");
+include("header.php");
 ?>
-<?php
-    include("header.php");
-?>
+
 <div id="cor">
-
     <div id="adotetudo">
-            <?php
-
+        <?php
         $sql = "SELECT fotoanuncio, nome, endereco, id FROM anuncio;";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-                ?> 
+        ?>
                 <div id="adoteall">
-    <div class="cardadote">
-                <?php
-                echo '<a onclick="location.href=\'perfildog.php?id='.$row->id.'\';">. <img src="img/'.$row->fotoanuncio.'" width = "130" >';
-                echo '<h2>' .$row->nome . '</h2>';
-                echo '<h3>' .$row->endereco . '</h3>';
-                echo '</a>';
+                    <div class="cardadote">
+                        <a onclick="location.href='perfildog.php?id=<?php echo $row->id; ?>';">
+                            <img src="img/<?php echo $row->fotoanuncio; ?>" width="130">
+                            <h2><?php echo $row->nome; ?></h2>
+                            <h3><?php echo $row->endereco; ?></h3>
+                        </a>
+                    </div>
+                </div>
+        <?php
             }
-            ?> 
-            </div>
-</div>
-</div>
-
-            <?php
-        }else {
+        } else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
-        </div>
+    </div>
 </div>
+
 <?php
-    include("footer.php");
+include("footer.php");
 ?>

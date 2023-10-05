@@ -1,25 +1,30 @@
 <?php
     include("header.php");
 ?>      
-    <div style="background: linear-gradient(135deg, #0187a7, #016d88);">
-    <br><br><br><br><br>
+    <div id="cor">
+    <br><br><br><br><br><br><br>
+    <div id="espaco">
     <div id="contform">
 <?php
     include ("config.php");
-    // Verificar se o parâmetro "id" está definido e não vazio
+
     if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
         $id = $_REQUEST["id"];
 
         $sql = "SELECT * FROM anuncio WHERE id=" . $id;
         $res = $conn->query($sql);
 
-        // Verificar se a consulta retornou algum resultado
         if ($res && $res->num_rows > 0) {
             $row = $res->fetch_object();
 
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "editar") {
                 $nome = $_POST["nome"];
                 $endereco = $_POST["endereco"];
+                $estado = $_POST["estado"];
+                $cidade = $_POST["cidade"];
+                $cep = $_POST["cep"];
+                $bairro = $_POST["bairro"];
+                $numero = $_POST["numero"];
                 $idade = $_POST["idade"];
                 $sexo = $_POST["sexo"];
                 $porte = $_POST["porte"];
@@ -28,11 +33,11 @@
                 $enfermidade = $_POST["enfermidade"];
                 $fotoanuncio = $_POST["fotoanuncio"];
 
-                $sql = "UPDATE anuncio SET nome='{$nome}', endereco='{$endereco}', idade='{$idade}', sexo='{$sexo}', porte='{$porte}', raca='{$raca}', cor='{$cor}', enfermidade='{$enfermidade}', fotoanuncio='{$fotoanuncio}' WHERE id='{$id}'";
+                $sql = "UPDATE anuncio SET nome='{$nome}', endereco='{$endereco}', estado='{$estado}', cidade='{$cidade}', cep='{$cep}', bairro='{$bairro}', numero='{$numero}', idade='{$idade}', sexo='{$sexo}', porte='{$porte}', raca='{$raca}', cor='{$cor}', enfermidade='{$enfermidade}', fotoanuncio='{$fotoanuncio}' WHERE id='{$id}'";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Anúncio atualizado com sucesso.";
-                    // Redirecionar para a página de anúncios
+
                     header("Location: anuncio.php");
                     exit;
                 } else {
@@ -57,8 +62,28 @@
         <input type="text" name="nome" value="<?php echo $row->nome; ?>">
     </div>
     <div class="infoform">
+        <label class="letraform">Estado</label>
+        <input type="text" name="estado" value="<?php echo $row->estado; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Cidade</label>
+        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Bairro</label>
+        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>">
+    </div>
+    <div class="infoform">
         <label class="letraform">Endereço</label>
         <input type="text" name="endereco" value="<?php echo $row->endereco; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Número</label>
+        <input type="number" name="numero" value="<?php echo $row->numero; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">CEP</label>
+        <input type="number" name="cep" value="<?php echo $row->cep; ?>">
     </div>
     <div class="infoform">
         <label class="letraform">Idade (Aproximada)</label>
@@ -109,7 +134,8 @@ input.onchange = (e) => {
 </form>
 </div>
 </div>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br>
+</div>
 </div>
 </body>
 <?php

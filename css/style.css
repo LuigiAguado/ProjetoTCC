@@ -122,6 +122,46 @@ header{
 
 } 
 
+/* ROLL DOWN PERFIL */
+
+/* Estilo básico para os botões */
+.toggle-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para a lista de menu */
+  .menu {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    padding: 7px;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    background-color: #016d88;
+    margin: 5px 0;
+    border: 2px solid #ddd; /* Adiciona divisão entre as tags <li> */
+    padding: 5px; /* Espaçamento interno */
+    border-radius: 6px;
+  }
+  
+  /* Estilo para os links no menu */
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+  }  
+
 /* CONTEUDO */
 
 #conteudo{
@@ -131,7 +171,12 @@ header{
 }
 
 #cor{
-    background-color: #016d88;
+    background-color: #0187a7;
+}
+
+#espaco{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .contvideo{
@@ -211,6 +256,10 @@ header{
     font-size: 25px;
     font-weight: 500;
     position: relative;
+}
+
+#formulario .tituloform a{
+    padding-left: 27rem;
 }
 
 
@@ -389,7 +438,7 @@ form #buttoncriar{
 
 #caixaperfil{
     width: 40rem;
-    height: 50rem;
+    height: 90rem;
     background: #fff;
     border-radius: 8px;
     padding-top: 1rem;
@@ -606,3 +655,47 @@ form #buttoncriarc{
     letter-spacing: 1px;
     border-radius: 6px;
 }
+
+/* PÁGINA ESCOLHA LOGIN */
+
+.pageescolha h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.button-escolha {
+    margin: 6px;
+    margin-top: 54px;
+    margin-bottom: 14px;
+    padding: 20px;
+    width: 25rem;
+    outline: none;
+    color: #016d88;
+    background: #fff;
+    border: none;
+    font-size: 36px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    border-radius: 12px;
+}
+
+
+.pageescolha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.aescolha{
+    font-size: 1.2rem;
+    color: #fff;
+    padding-left: 4px;
+
+}
+
+/* PÁGINA ANUNCIO */
+  

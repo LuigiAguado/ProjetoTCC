@@ -1,8 +1,9 @@
 <?php
     include("header.php");
 ?>
-    <div style="background: linear-gradient(135deg, #0187a7, #016d88);">
-    <br><br><br><br><br>
+    <div id="cor">
+    <br><br><br><br><br><br><br>
+    <div id="espaco">
     <div id="contform">
 <?php
 include("config.php");
@@ -16,6 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     $senha = $_POST["senha"];
     $email = $_POST["email"];
     $endereco = $_POST["endereco"];
+    $estado = $_POST["estado"];
+    $cidade = $_POST["cidade"];
+    $cep = $_POST["cep"];
+    $bairro = $_POST["bairro"];
+    $numero = $_POST["numero"];
     $fotoong = $_POST["fotoong"];
     $confirmasenha = $_POST["confirmasenha"];
     $duplicado = mysqli_query($conn, "SELECT * FROM ong WHERE CNPJ = '$CNPJ' OR email = '$email'");
@@ -24,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         echo "<script> alert('Email ou CNPJ já cadastrado!'); </script>";
     } else {
         if($senha == $confirmasenha){
-            $sql = "INSERT INTO ong (CNPJ, nomef, razao, telefone, email, senha, endereco, fotoong) VALUES ('{$CNPJ}', '{$nomef}', '{$razao}', '{$telefone}', '{$senha}', '{$email}', '{$endereco}', '{$fotoong}')";
+            $sql = "INSERT INTO ong (CNPJ, nomef, razao, telefone, endereco, estado, cidade, cep, numero, bairro, senha, fotoong, email) VALUES ('{$CNPJ}', '{$nomef}', '{$razao}', '{$telefone}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$senha}', '{$fotoong}', '{$email}')";
             mysqli_query($conn,$sql);
             header("Location: loginusu.php");
             echo "<script> alert('Usuário registrado com sucesso!'); </script>";
@@ -35,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
 }
 ?>
 <div id="formulario">
-    <div class="tituloform">Criar Usuário</div>
+    <div class="tituloform">Criar ONG <a href="criarusu.php">Criar Usuário</a></div>
 <form action="?page=criarong" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div class="detalheform">
@@ -56,8 +62,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         <input type="number" id="CNPJ" name="CNPJ" value="0" min="0" required>
     </div>
     <div class="infoform">
+        <label class="letraform">Estado</label>
+        <input type="text" name="estado" placeholder="Insira o estado do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Cidade</label>
+        <input type="text" name="cidade" placeholder="Insira a cidade do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Bairro</label>
+        <input type="text" name="bairro" placeholder="Insira o bairro do animal" required>
+    </div>
+    <div class="infoform">
         <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" placeholder="Insira o endereço" required>
+        <input type="text" name="endereco" placeholder="Insira o endereço do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Número</label>
+        <input type="number" name="numero" placeholder="Insira o numero do endereço do animal" required>
+    </div>
+    <div class="infoform">
+        <label class="letraform">CEP</label>
+        <input type="number" name="cep" placeholder="Insira o CEP do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Telefone</label>
@@ -96,7 +122,8 @@ input.onchange = (e) => {
 </form>
 </div>
 </div>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br>
+</div>
 </div>
 <?php
     include("footer.php");
