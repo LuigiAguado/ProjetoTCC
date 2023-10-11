@@ -24,8 +24,6 @@ include('header.php');
         </div>
         </div>
     </div>
-    <!-- Conteúdo da página -->
-
     <div class="ong-div">
         <div class="ong-text">
             <p>Seja parte da nossa comunidade!</p>
@@ -50,7 +48,7 @@ include('header.php');
         <a href="contato.php" class="cadastro-button">Quer adotar? Se cadastre em nosso site!</a>
     </div>
 </div>
-
+<?php echo '<button onclick="location.href=\'logout.php\';">Sair</button>';?>
 <?php include('footer.php'); ?>
 
 

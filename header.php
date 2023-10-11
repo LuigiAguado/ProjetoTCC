@@ -47,14 +47,14 @@ function toggleMenu(menuId) {
       echo '<button class="toggle-button" onclick="toggleMenu(\'menu-usuario\')"><a>'. $_SESSION['nome'] .'</a></button>';
       echo '<div id="menu-usuario" class="menu" style="display:none;">';
       echo '<ul>';
-      echo '<li><a href="perfillusu.php">Perfil</a></li>';
+      echo '<li><a href=perfilusu.php?cpf=' .$_SESSION['id'].'>Perfil</a></li>';
       echo '</ul>';
       echo '</div>';
   } else if (isset($_SESSION['nomef'])) { 
       echo '<button class="toggle-button" onclick="toggleMenu(\'menu-ong\')"><a>'. $_SESSION['nomef'] .'</a></button>';
       echo '<div id="menu-ong" class="menu" style="display:none;">';
       echo '<ul>';
-      echo '<li><a href="perfilong.php">Perfil</a></li>';
+      echo '<li><a href=perfilong.php?CNPJ=' .$_SESSION['id'].'>Perfil</a></li>';
       echo '<li><a href="anuncio.php">Anúncio</a></li>';
       echo '</ul>';
       echo '</div>';

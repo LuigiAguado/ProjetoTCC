@@ -87,7 +87,7 @@
     </div>
     <div class="infoform">
         <label class="letraform">Idade (Aproximada)</label>
-        <input type="number" id="idadeseta" name="idade" value="<?php echo $row->idade; ?>">
+        <input type="date" id="idadeseta" name="idade" value="<?php echo $row->idade; ?>">
     </div>
     <div class="infoform">
         <label class="letraform">Sexo</label>

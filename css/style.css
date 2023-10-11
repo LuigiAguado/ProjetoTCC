@@ -377,6 +377,12 @@ form #buttoncriar{
     color: #0187a7;
 } 
 
+#criarbotao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* CONTEUDO PÁGINA PERFIL DOG */
 
@@ -438,7 +444,7 @@ form #buttoncriar{
 
 #caixaperfil{
     width: 40rem;
-    height: 90rem;
+    height: 120rem;
     background: #fff;
     border-radius: 8px;
     padding-top: 1rem;

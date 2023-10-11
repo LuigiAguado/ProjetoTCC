@@ -1,13 +1,11 @@
 <?php
-    include("config.php");
+include("config.php");
+include("header.php");
 ?>
-<?php
-    include("header.php");
-?>
+
 <div id="cor">
-    
 <div>
-        <div>
+        <div class="criarbotao">
             <p style="font-size: 2rem; color: #fff;">
                     Criar novo anúncio
                 </p>
@@ -17,63 +15,33 @@
                 <br>
             </div>
             </div>
-            <div id="perfildog">
-            <div id="boxdog">
-                <?php
-        $sql = "SELECT * FROM anuncio";
+    <div id="adotetudo">
+        <?php
+        $sql = "SELECT fotoanuncio, nome, cidade, id FROM anuncio;";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
-
-                $dataNascimento = new DateTime($row->idade);
-                $hoje = new DateTime();
-                $intervalo = $dataNascimento->diff($hoje);
-                
-                $anos = $intervalo->y;
-                $meses = $intervalo->m;
-                $dias = $intervalo->d;
-    
-                if ($anos > 0) {
-                    $idadeFormatada = $anos . " ano(s)";
-                } elseif ($meses > 0) {
-                    $idadeFormatada = $meses . " mês(es)";
-                } else {
-                    $idadeFormatada = $dias . " dia(s)";
-                }
-                ?><div id="imgperfildoga"><?php
-                echo '<img src="img/'.$row->fotoanuncio.'" width = "200">';
-                ?></div><div id="descdoga"><?php
-                echo "<h1>". $row->nome. "</h1>" . "<br>";
-                echo "<h2>".$row->cidade. "</h2>" . "<br>";
-                echo "Estado: " .$row->estado . "<br>";
-                echo "Bairro: " .$row->bairro . "<br>";
-                echo "Número: " .$row->endereco .",".$row->numero . "<br>";
-                echo "CEP: " .$row->cep . "<br>";
-                echo "Idade: " .$idadeFormatada . "<br>";
-                echo "Sexo: " .$row->sexo . "<br>";
-                echo "Porte: " .$row->porte . "<br>";
-                echo "Raça: " .$row->raca . "<br>";
-                echo "Cor: " .$row->cor . "<br>";
-                echo "Enfermidade: " .$row->enfermidade . "<br><br>";
-                echo '<div class="buttoncriara">';
-                echo '<button onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
-                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
-                echo '</div>'."<br>";
+        ?>
+                <div id="adoteall">
+                    <div class="cardadote">
+                        <a onclick="location.href='editanuncio.php?id=<?php echo $row->id; ?>';">
+                            <img src="img/<?php echo $row->fotoanuncio; ?>" width="130" height="170">
+                            <h2><?php echo $row->nome; ?></h2>
+                            <h3><?php echo $row->cidade; ?></h3>
+                        </a>
+                    </div>
+                </div>
+        <?php
             }
-        }else {
+        } else {
             echo "<p>Não existem anúncios.</p>";
         }
         ?>
-            </div>
-            </div>
-            </div>
-        <br><br>
-        </div>
-        
-        <br><br><br><br>
+    </div>
 </div>
-    <?php
-    include("footer.php");
+
+<?php
+include("footer.php");
 ?>

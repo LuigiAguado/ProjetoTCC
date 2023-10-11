@@ -1,7 +1,5 @@
 <?php
     include("config.php");
-?>
-<?php
     include("header.php");
 ?>
 <div id="cor">
@@ -12,9 +10,9 @@
 
                 <?php
     if (isset($_REQUEST["CNPJ"]) && !empty($_REQUEST["CNPJ"])) {
-        $cpf = $_REQUEST["CNPJ"];
+        $CNPJ = $_REQUEST["CNPJ"];
 
-        $sql = "SELECT * FROM usuario WHERE CNPJ=" . $CNPJ;
+        $sql = "SELECT * FROM ong WHERE CNPJ=" . $CNPJ;
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
@@ -22,7 +20,7 @@
             while ($row = $res->fetch_object()) {
                 ?><div class="perfilusu"> <?php
 
-                echo '<img src="img/'.$row->fotousu.'" width = "200">';
+                echo '<img src="img/'.$row->fotoong.'" width = "200">';
 
                 ?></div> <div class="perfilusu"><?php
                 echo '<h1>'. $row->nomef. '</h1>' . "<br><br>";
@@ -38,8 +36,8 @@
                 echo "Telefone: ".$row->telefone . "<br><br>";
                 
                 ?></div><div class="perfilusu"> <?php
-                echo '<button onclick="location.href=\'editarusu.php?cpf='.$row->cpf.'\';">Editar</button>';
-                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o Perfil?\')){location.href=\'excluiriusu.php?cpf='.$row->cpf.'\';}else{false;}">Excluir</button>';
+                echo '<button onclick="location.href=\'editarong.php?CNPJ='.$row->CNPJ.'\';">Editar</button>';
+                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o Perfil?\')){location.href=\'excluiriusu.php?CNPJ='.$row->CNPJ.'\';}else{false;}">Excluir</button>';
                 echo '<button onclick="location.href=\'logout.php\';">Sair</button>';
             }
         } 
