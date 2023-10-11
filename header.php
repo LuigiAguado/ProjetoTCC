@@ -47,7 +47,7 @@ function toggleMenu(menuId) {
       echo '<button class="toggle-button" onclick="toggleMenu(\'menu-usuario\')"><a>'. $_SESSION['nome'] .'</a></button>';
       echo '<div id="menu-usuario" class="menu" style="display:none;">';
       echo '<ul>';
-      echo '<li><a href="perfilusu.php">Perfil</a></li>';
+      echo '<li><a href="perfillusu.php">Perfil</a></li>';
       echo '</ul>';
       echo '</div>';
   } else if (isset($_SESSION['nomef'])) { 

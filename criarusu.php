@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
 }
 ?>
 <div id="formulario">
-    <div class="tituloform">Criar Usuário <a href="criarong.php">Criar ONG</a></div>
+    <div class="tituloform">Criar Usuário <a href="criarong.php">Criar Organização</a></div>
 <form action="?page=criarusu" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div class="detalheform">
