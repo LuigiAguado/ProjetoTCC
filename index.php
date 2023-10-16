@@ -16,7 +16,7 @@ include('header.php');
         <div id="sobretxt">
         <div class="resumotxt">
             <div class="imgdogres">
-                <img class="imgdogrestam" src="img/cachorro3.png">
+                <img class="imgdogrestam" src="img/cachorro3.jpeg">
             </div>
             <div class="resumotexto">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo praesentium vitae sequi accusantium suscipit quam enim odio modi, quisquam quaerat minus voluptas et expedita reprehenderit. Saepe unde impedit distinctio!</p>
