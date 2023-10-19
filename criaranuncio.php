@@ -46,6 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         <input type="text" name="nome" placeholder="Insira o nome do animal" required>
     </div>
     <div class="infoform">
+        <label class="letraform">Organização</label>
+        <input type="text" name="ong" placeholder="Insira a onge do animal" required>
+    </div>
+    <div class="infoform">
         <label class="letraform">Estado</label>
         <input type="text" name="estado" placeholder="Insira o estado do animal" required>
     </div>

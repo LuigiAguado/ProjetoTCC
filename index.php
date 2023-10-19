@@ -26,29 +26,41 @@ include('header.php');
     </div>
     <div class="ong-div">
         <div class="ong-text">
-            <p>Seja parte da nossa comunidade!</p>
-            <img src="img/amordepatas.png" alt="Imagem de uma ONG" />
+           <p class="cadastro-button">Está cuidando de animais que precisam de um lar?</p> 
+            <a href="criarong.php">Faça parte do projeto, cadastre-se</a>
         </div>
-        <div class="ong-button">
-            <a href="contato.php" class="cadastro-button">É uma ONG? Venha se cadastrar!</a>
+        <div class="ong-img">
+            <a href="criarong.php"><img src="img/amordepatas.png" alt="Imagem de uma ONG" /></a>
         </div>
-    </div>
 
-    <div class="pessoa-div">
-    <div class="pessoa-text">
-        <p>Quer adotar um animal?</p>
+        
     </div>
-    <div class="animal-images">
-        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
-        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
-        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
-
-    </div>
-    <div class="adotar-button">
-        <a href="contato.php" class="cadastro-button">Quer adotar? Se cadastre em nosso site!</a>
-    </div>
-</div>
-<?php echo '<button onclick="location.href=\'logout.php\';">Sair</button>';?>
+    </div class="arrumando">  
+        <p><h2>Buscando um animalzinho?</h2></p>
+        </div>
+    <div id="adotealli">
+                    <div class="cardadotei">
+                        <a href="adote.php">
+                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                            <h2>Azeitona</h2>
+                            <h3>São Paulo</h3>
+                        </a>
+                    </div>
+                    <div class="cardadotei">
+                        <a href="adote.php">
+                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                            <h2>Jota</h2>
+                            <h3>São Paulo</h3>
+                        </a>
+                    </div>    
+                    <div class="cardadotei">
+                        <a href="adote.php">
+                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                            <h2>Pulga</h2>
+                            <h3>São Paulo</h3>
+                        </a>
+                    </div>           
+            </div>
 <?php include('footer.php'); ?>
 
 

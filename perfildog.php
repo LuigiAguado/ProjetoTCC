@@ -61,7 +61,7 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             echo "Enfermidade: " .$row->enfermidade . "<br>";
             ?>
             Ficou interessado?
-            <button id="buttoncriar"> Adotar</button>
+            <a href="">adotar</a>
             <?php
         }
     }
