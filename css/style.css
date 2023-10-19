@@ -255,10 +255,11 @@ header{
     color: #fff;
 }
 
-.arrumando h2{
+.arrumando{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
     font-size:40px;
 }
 

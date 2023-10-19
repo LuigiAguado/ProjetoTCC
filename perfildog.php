@@ -62,7 +62,7 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             echo "Enfermidade: " .$row->enfermidade . "<br>";
             ?>
             Ficou interessado?
-            <a href="">adotar</a>
+            <a href="contatoong.php?nomef=<?php echo $row->ong; ?>">adotar</a>
             <?php
         }
     }

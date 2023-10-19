@@ -1,6 +1,14 @@
 <?php
     include("header.php");
-?>
+    include("config.php");
+    $nome = $_GET["nomef"];
+    $sql = "SELECT email FROM ong WHERE nomef='" . $nome . "'";
+        $res = $conn->query($sql);
+        $qtd = $res->num_rows;
+
+        if ($qtd > 0) {
+            while ($row = $res->fetch_object()) {
+        ?>
 
 <div class="h1contatoc">
 </div>
@@ -8,7 +16,7 @@
 
 <div id="formularioc">
 <div class="tituloformc">Entre em contato com a organização para adotar seu amigo</div>
-<form method="POST" action="enviaremail.php">
+<form method="POST" action="enviaremailong.php?username="<?php echo $row->email; ?>>
     <div class="detalheformc">
     <div class="infoformc">
         <label for="name">Nome</label>
@@ -35,5 +43,7 @@
     <div class="h1contatoc">
 </div>
 <?php
+            }
+        }
     include("footer.php");
 ?>

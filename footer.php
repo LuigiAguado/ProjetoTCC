@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div id="footer_copyright">
+        <div id="footer_copyright" style="color: #fff;">
             &#169
             2023 all rights reserved
         </div>

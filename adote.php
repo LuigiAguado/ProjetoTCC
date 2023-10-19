@@ -9,14 +9,13 @@ if(!isset($_SESSION['id'])) {
 
 <div id="cor">
     <div>
-        <!-- Adicione campos de pesquisa para nome e endereço e um botão de pesquisa -->
         <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
         <input type="text" id="endereco_animal" placeholder="Pesquisar por endereço">
         <button onclick="filtrarAnimais()">Pesquisar</button>
     </div>
     <div id="adotetudo">
         <?php
-        $sql = "SELECT fotoanuncio, nome, endereco, id FROM anuncio;";
+        $sql = "SELECT * FROM anuncio;";
         $res = $conn->query($sql);
         $qtd = $res->num_rows;
 
