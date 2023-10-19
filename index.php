@@ -61,6 +61,7 @@ include('header.php');
                         </a>
                     </div>           
             </div>
+            <button onclick="location.href='logout.php'">Sair</button>
 <?php include('footer.php'); ?>
 
 

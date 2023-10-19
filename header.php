@@ -55,7 +55,7 @@ function toggleMenu(menuId) {
       echo '<div id="menu-ong" class="menu" style="display:none;">';
       echo '<ul>';
       echo '<li><a href=perfilong.php?CNPJ=' .$_SESSION['id'].'>Perfil</a></li>';
-      echo '<li><a href="anuncio.php">Anúncio</a></li>';
+      echo '<li><a href=anuncio.php?nomef=' .$_SESSION['nomef'].'>Anúncio</a></li>';
       echo '</ul>';
       echo '</div>';
   } else {

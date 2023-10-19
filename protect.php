@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 }
 
 if(!isset($_SESSION['id'])) {
-    echo "Entrar";
+    header("Location: escolhalogin.php");
 }
 
 

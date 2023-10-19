@@ -17,9 +17,12 @@ include("header.php");
             </div>
     <div id="adotetudo">
         <?php
-        $sql = "SELECT fotoanuncio, nome, cidade, id FROM anuncio;";
-        $res = $conn->query($sql);
-        $qtd = $res->num_rows;
+            if (isset($_REQUEST["nomef"]) && !empty($_REQUEST["nomef"])) {
+                $nomef = $_REQUEST["nomef"];
+        
+                $sql = "SELECT nome, cidade, fotoanuncio FROM anuncio WHERE ong=" . $nomef;
+                $res = $conn->query($sql);
+                $qtd = $res->num_rows;
 
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
@@ -38,6 +41,7 @@ include("header.php");
         } else {
             echo "<p>Não existem anúncios.</p>";
         }
+    }
         ?>
     </div>
 </div>

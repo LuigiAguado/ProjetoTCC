@@ -1,6 +1,10 @@
 <?php
 include("config.php");
+
 include("header.php");
+if(!isset($_SESSION['id'])) {
+    header("Location: escolhalogin.php");
+}
 ?>
 
 <div id="cor">
@@ -58,4 +62,5 @@ include("header.php");
 
 <?php
 include("footer.php");
+
 ?>

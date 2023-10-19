@@ -22,10 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     $porte = $_POST["porte"];
     $raca = $_POST["raca"];
     $cor = $_POST["cor"];
+    $ong = $_POST["ong"];
     $enfermidade = $_POST["enfermidade"];
     $fotoanuncio = $_POST["fotoanuncio"];
 
-    $sql = "INSERT INTO anuncio (nome, endereco, estado, cidade, cep, bairro, numero, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio) VALUES ('{$nome}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}')";
+    $sql = "INSERT INTO anuncio (nome, endereco, estado, cidade, cep, bairro, numero, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio, ong) VALUES ('{$nome}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}'), '{$ong}')";
 
     if ($conn->query($sql) === true) {
         echo "Anúncio criado com sucesso.";
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     </div>
     <div class="infoform">
         <label class="letraform">Organização</label>
-        <input type="text" name="ong" placeholder="Insira a onge do animal" required>
+        <input type="text" name="ong" placeholder="Insira a ong do animal" required>
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>

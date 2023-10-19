@@ -30,10 +30,11 @@
                 $porte = $_POST["porte"];
                 $raca = $_POST["raca"];
                 $cor = $_POST["cor"];
+                $ong = $_POST["ong"];
                 $enfermidade = $_POST["enfermidade"];
                 $fotoanuncio = $_POST["fotoanuncio"];
 
-                $sql = "UPDATE anuncio SET nome='{$nome}', endereco='{$endereco}', estado='{$estado}', cidade='{$cidade}', cep='{$cep}', bairro='{$bairro}', numero='{$numero}', idade='{$idade}', sexo='{$sexo}', porte='{$porte}', raca='{$raca}', cor='{$cor}', enfermidade='{$enfermidade}', fotoanuncio='{$fotoanuncio}' WHERE id='{$id}'";
+                $sql = "UPDATE anuncio SET nome='{$nome}', endereco='{$endereco}', estado='{$estado}', cidade='{$cidade}', cep='{$cep}', bairro='{$bairro}', numero='{$numero}', idade='{$idade}', sexo='{$sexo}', porte='{$porte}', raca='{$raca}', cor='{$cor}', enfermidade='{$enfermidade}', fotoanuncio='{$fotoanuncio}', ong='{$ong}' WHERE id='{$id}'";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Anúncio atualizado com sucesso.";
@@ -60,6 +61,10 @@
     <div class="infoform">
         <label class="letraform">Nome</label>
         <input type="text" name="nome" value="<?php echo $row->nome; ?>">
+    </div>
+    <div class="infoform">
+        <label class="letraform">Organização</label>
+        <input type="text" name="ong" value="<?php echo $row->ong; ?>">
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>
