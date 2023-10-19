@@ -48,6 +48,7 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             ?></div><div id="descdog"><?php
             echo "<h1>". $row->nome. "</h1>";
             echo "<h2>".$row->cidade. "</h2>" . "<br>";
+            echo "Organização: " .$row->ong . "<br>";
             echo "Estado: " .$row->estado . "<br>";
             echo "Bairro: " .$row->bairro . "<br>";
             echo "Endereço: " .$row->endereco . "<br>";
