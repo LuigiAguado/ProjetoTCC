@@ -3,7 +3,7 @@
     include("header.php");
 ?>
 <div id="cor">
-    <br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     <div id="comperfil">
     <div id="caixaperfil">
 
@@ -46,7 +46,9 @@
         </div>  
             </div>
 </div>
-<br><br><br><br><br>
+<div id="cor">
+<br><br><br><br><br><br><br><br><br><br>    
+</div>
 </div>
 </div>
 

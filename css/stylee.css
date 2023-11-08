@@ -464,7 +464,6 @@ form #buttoncriar{
 
 #perfildog {
     display: flex;
-    height: 80vh;
     justify-content: center;
     align-items: center;
 }
@@ -472,11 +471,13 @@ form #buttoncriar{
 #boxdog{
     background: #fff;
     height: 80vh;
+
 } 
 
 
 #imgperfildog{
-    background-color: #4a4b50;
+    background-color: #bdbdbd;
+    border-radius: 3rem;
     padding: 1.5rem;
 }
 
@@ -699,8 +700,8 @@ form #buttoncriarc{
 
 #caixaperfil{
     width: 40rem;
-    height: 2250rem;
-    background: #000000;
+    height: 1000px;
+    background: #fff;
     border-radius: 8px;
     padding-top: 1rem;
 }

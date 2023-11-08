@@ -35,7 +35,7 @@ include('header.php');
 
         
     </div>
-    </div class="arrumando">  
+    <div class="arrumando">  
         <p><h2>Buscando um animalzinho?</h2></p>
         </div>
     <div id="adotealli">
@@ -61,7 +61,6 @@ include('header.php');
                         </a>
                     </div>           
             </div>
-            <button onclick="location.href='logout.php'">Sair</button>
 <?php include('footer.php'); ?>
 
 
