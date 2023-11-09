@@ -8,21 +8,25 @@ if(!isset($_SESSION['id'])) {
 ?>
 
 <div id="cor">
-    <div>
-        <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
-        <input type="text" id="endereco_animal" placeholder="Pesquisar por endereço">
-        <label for="sexo">Sexo:</label>
-        <input type="radio" name="sexo" id="sexo_macho" value="Macho"> Macho
-        <input type="radio" name="sexo" id="sexo_femea" value="Fêmea"> Fêmea
-        <select id="porte">
-            <option value="">Selecione o porte</option>
-            <option value="Pequeno">Pequeno</option>
-            <option value="Médio">Médio</option>
-            <option value="Grande">Grande</option>
-        </select>
-        <input type="text" id="raca" placeholder="Pesquisar por raça">
-        <input type="text" id="enfermidade" placeholder="Pesquisar por enfermidade">
-        <button onclick="filtrarAnimais()">Pesquisar</button>
+    <div class="titadote"><H1>Encontre um amigo</H1></div>
+    <div id="filtro-container">
+        <button id="filtro-btn" onclick="toggleFiltro()">Filtro</button>
+        
+        <div id="filtro-opcoes" class="escondido">
+            <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
+            <input type="text" id="endereco_animal" placeholder="Pesquisar por endereço">
+            <input type="radio" name="sexo" id="sexo_macho" value="Macho"> Macho
+            <input type="radio" name="sexo" id="sexo_femea" value="Fêmea"> Fêmea
+            <select id="porte">
+                <option value="">Selecione o porte</option>
+                <option value="Pequeno">Pequeno</option>
+                <option value="Médio">Médio</option>
+                <option value="Grande">Grande</option>
+            </select>
+            <input type="text" id="raca" placeholder="Pesquisar por raça">
+            <input type="text" id="enfermidade" placeholder="Pesquisar por enfermidade">
+            <button onclick="filtrarAnimais()">Pesquisar</button>
+        </div>
     </div>
     <div id="adotetudo">
         <?php
@@ -35,7 +39,7 @@ if(!isset($_SESSION['id'])) {
         ?>
                 <div class="cardadote">
                     <a onclick="location.href='perfildog.php?id=<?php echo $row->id; ?>';">
-                        <img src="img/<?php echo $row->fotoanuncio; ?>" width="130">
+                        <img src="img/<?php echo $row->fotoanuncio; ?>" width="130" height="170">
                         <h2><?php echo $row->nome; ?></h2>
                         <h3><?php echo $row->endereco; ?></h3>
                         <p class="sexo"><?php echo $row->sexo; ?></p>
@@ -52,6 +56,7 @@ if(!isset($_SESSION['id'])) {
         ?>
     </div>
 </div>
+<script src="filtroaparece.js"></script>
 
 <script>
     function filtrarAnimais() {

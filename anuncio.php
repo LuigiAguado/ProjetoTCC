@@ -4,16 +4,11 @@ include("header.php");
 ?>
 
 <div id="cor">
-    <div>
         <div class="criarbotao">
-            <p style="font-size: 2rem; color: #fff;">
-                Criar novo anúncio
-            </p>
-            <a href="criaranuncio.php">
+            <a href="criaranuncio.php"><p>Criar novo anúncio</p>
                 <img src="img/sinal2.png" alt="+" width="25" height="25">
             </a>
             <br>
-        </div>
     </div>
     <div id="adotetudo">
         <?php

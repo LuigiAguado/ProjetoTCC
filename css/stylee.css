@@ -266,15 +266,6 @@ header{
     font-size:40px;
 }
 
-#adotealli {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 20rem;
-    padding-right: 20rem;
-    background-color: #017f9e;
-    padding-bottom: 3rem;   
-}
-
 .cardadotei {
     flex: 0 0 calc(30% - 20px); /* Defina a largura desejada com margens */
     padding: 10px;
@@ -412,12 +403,68 @@ form #buttoncriar{
 
 /* PÁGINA ADOTE */
 
+
+#filtro-opcoes.escondido {
+    display: none;
+}
+
+#filtro-btn.escondido {
+    display: none;
+}
+
+#filtro-btn{
+    height: 3rem;
+    width: 5rem;
+    margin-left: 10rem;  /* Vai dar um espaçozinho à esquerda */
+    outline: none;
+    color: #fff;
+    background: #016d88;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+}
+
+.titadote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-top: 2rem;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+#filtro-opcoes {
+    text-align: center;
+    background-color: #016d88;
+    border-radius: 10rem;
+}
+
+#filtro-opcoes input[type="text"],
+#filtro-opcoes select {
+    max-width: 300px; /* Ajuste o valor conforme necessário */
+    padding: 10px;
+    margin: 5px;
+}
+
+#filtro-opcoes label {
+    display: block;
+    margin: 10px 0;
+}
+
+#filtro-opcoes button {
+    padding: 10px;
+    margin: 10px;
+}
+
 #adotetudo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
+    padding: 2rem;
 }
 
 .cardadote {
@@ -426,6 +473,7 @@ form #buttoncriar{
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
+    width: 200px;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -774,3 +822,25 @@ form #buttoncriarc{
 
 /* PÁGINA ANUNCIO */
   
+
+.criarbotao {
+    text-align: center;
+    padding: 20px; /* Espaçamento interno do retângulo */
+}
+
+.criarbotao p {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    
+}
+
+.criarbotao a {
+    display: inline-block;
+    margin-top: 10px; /* Espaçamento acima do link */
+}
+
+.criarbotao img {
+    height: 3rem;
+    width: 3rem;
+}
