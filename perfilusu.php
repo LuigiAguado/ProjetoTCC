@@ -22,7 +22,7 @@
             while ($row = $res->fetch_object()) {
                 ?><div class="perfilusu"> <?php
 
-                echo '<img src="img/'.$row->fotousu.'" width = "200">';
+                echo '<img src="img/'.$row->fotousu.'" width = "200" height="200">';
 
                 ?></div> <div class="perfilusu"><?php
                 echo '<h1>'. $row->nome. '</h1>' . "<br><br>";

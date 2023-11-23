@@ -38,28 +38,37 @@ include('header.php');
     <div class="arrumando">  
         <p><h2>Buscando um animalzinho?</h2></p>
         </div>
+        <div id="adotetudoi">
     <div id="adotealli">
                     <div class="cardadotei">
                         <a href="adote.php">
-                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" />
                             <h2>Azeitona</h2>
                             <h3>São Paulo</h3>
                         </a>
                     </div>
                     <div class="cardadotei">
                         <a href="adote.php">
-                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                        <img src="img/cachorro5.png" alt="Imagem de um animal para adoção"  />
                             <h2>Jota</h2>
                             <h3>São Paulo</h3>
                         </a>
                     </div>    
                     <div class="cardadotei">
                         <a href="adote.php">
-                        <img src="img/cachorro.png" alt="Imagem de um animal para adoção" style="max-width: 150px; height: auto;" />
+                        <img src="img/cachorro2.png" alt="Imagem de um animal para adoção"/>
                             <h2>Pulga</h2>
                             <h3>São Paulo</h3>
                         </a>
                     </div>           
+                    <div class="cardadotei">
+                        <a href="adote.php">
+                        <img src="img/cachorro4.png" alt="Imagem de um animal para adoção"/>
+                            <h2>Pulga</h2>
+                            <h3>São Paulo</h3>
+                        </a>
+                    </div>  
+            </div>
             </div>
 <?php include('footer.php'); ?>
 

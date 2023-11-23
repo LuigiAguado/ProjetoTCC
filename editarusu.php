@@ -36,7 +36,7 @@
                 if ($conn->query($sql) === TRUE) {
                     echo "Perfil atualizado com sucesso.";
 
-                    header("Location: perfilusu.php");
+                    header("Location: perfilusu.php?cpf='$row->cpf'");
                     exit;
                 } else {
                     echo "Erro ao atualizar o perfil: " . $conn->error;
@@ -100,12 +100,18 @@
     <div id="fotoanimalform">
     <div>
         <div>
-       <img src="choose.png" id="img" height="200" width="200"> 
+            <?php
+                if (!empty($row->fotousu)) {
+                    echo '<img src="img/' . $row->fotousu . '" id="img" height="200" width="200">';
+                } else {
+                    echo '<img src="choose.png" id="img" height="200" width="200">';
+                }
+            ?>
         </div>
         <label>Foto do usuário: </label>
-        <input type="file" name="fotousu" id="fotousu" accept="image/*">
+        <input type="file" name="fotousu" id="fotousu" accept="image/*" >
     </div>
-    </div>
+</div>
     <div>
         <button id="buttoncriar" type="submit">Editar</button>
     </div>

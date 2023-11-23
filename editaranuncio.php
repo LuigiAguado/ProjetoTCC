@@ -39,7 +39,7 @@
                 if ($conn->query($sql) === TRUE) {
                     echo "Anúncio atualizado com sucesso.";
 
-                    header("Location: anuncio.php");
+                    header("Location: editanuncio.php?id='$id'");
                     exit;
                 } else {
                     echo "Erro ao atualizar o anúncio: " . $conn->error;
@@ -118,12 +118,18 @@
     <div id="fotoanimalform">
     <div>
         <div>
-       <img src="choose.png" id="img" height="200" width="200"> 
+            <?php
+                if (!empty($row->fotoanuncio)) {
+                    echo '<img src="img/' . $row->fotoanuncio . '" id="img" height="200" width="200">';
+                } else {
+                    echo '<img src="choose.png" id="img" height="200" width="200">';
+                }
+            ?>
         </div>
         <label>Foto do animal: </label>
         <input type="file" name="fotoanuncio" id="fotoanuncio" accept="image/*">
     </div>
-    </div>
+</div>
     <div>
         <button id="buttoncriar" type="submit">Editar</button>
     </div>

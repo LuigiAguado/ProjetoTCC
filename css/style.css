@@ -259,31 +259,50 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 2rem;
     padding-top: 5rem;
     background-color: #017f9e;
     color: #fff;
     font-size:40px;
 }
 
-.cardadotei {
-    flex: 0 0 calc(30% - 20px); /* Defina a largura desejada com margens */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    margin: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+#adoteall {
+    display: flex;
+    justify-content: center;
 }
 
-.cardadotei a{
+#adotealli {
+    display: flex;
+    justify-content: center;
+}
+
+#adotetudoi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    background-color: #017f9e;
+}
+
+.cardadotei {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px;
+    max-width: 200px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardadotei a {
     text-decoration: none;
 }
 
 .cardadotei img {
-    max-width: 100%;
-    height: auto;
+    width: 150px;
+    height: 200px;
 }
 
 .cardadotei h2 {
@@ -298,6 +317,7 @@ header{
     color: #888;
     text-decoration: none;
 }
+
 
 
 /* Formulário */    
@@ -460,10 +480,10 @@ form #buttoncriar{
 
 #adotetudo {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin: 0;
     padding: 2rem;
 }
 
@@ -473,7 +493,8 @@ form #buttoncriar{
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -499,56 +520,70 @@ form #buttoncriar{
 
 .cardadote a:hover {
     color: #0187a7;
-} 
+}
 
-#criarbotao{
+
+.criarbotao {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 300px;
+    height: 80px;
+    text-decoration: none;
+    background-color: #016d88;
+    border-radius: 10px;
+    margin: 0 auto;
 }
+
+
 
 
 /* CONTEUDO PÁGINA PERFIL DOG */
 
-#perfildog {
+#boxdog {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
+  
+  #perfildog {
+    background-color: #fff;
+    padding: 80px;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+  }
+  
+  #imgperfildog {
+    margin-right: 20px;
+    width: 300px;
+    height: 400px;
+  }
+  
+  #descdog {
+    flex: 1;
+  }
+  
+  #descdog h1 {
+    font-size: 70px;
+  }
+  
+  #descdog p {
+    font-size: 60px;
+  }
+  
+  .buttoncriara {
+    margin-top: 20px;
+  }
+  
+  .buttoncriara button {
+    margin-right: 10px;
+  }
+  
+  
 
-#boxdog{
-    background: #fff;
-    height: 80vh;
-
-} 
-
-
-#imgperfildog{
-    background-color: #bdbdbd;
-    border-radius: 3rem;
-    padding: 1.5rem;
-}
-
-#descdog{
-    font-size: 25px;
-    padding: 1.5rem;
-}
-
-#buttoncriar{
-    margin: 3px;
-    margin-top: 27px;
-    margin-bottom: 7px;
-    padding: 10px;
-    height: 45px;
-    outline: none;
-    color: #fff;
-    background: linear-gradient(135deg, #0187a7, #016d88);
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 6px;
-}
 
 /* CONTEUDO PÁGINA PERFIL USU */
 
@@ -754,6 +789,14 @@ form #buttoncriarc{
     padding-top: 1rem;
 }
 
+#caixaperfilong{
+    width: 40rem;
+    height: 1050px;
+    background: #fff;
+    border-radius: 8px;
+    padding-top: 1rem;
+}
+
 #comperfil{
     width: 100%;
     height: 100vh;
@@ -843,4 +886,8 @@ form #buttoncriarc{
 .criarbotao img {
     height: 3rem;
     width: 3rem;
+}
+
+.informacao-oculta {
+    display: none;
 }

@@ -9,7 +9,7 @@
     include ("config.php");
 
     if (isset($_REQUEST["CNPJ"]) && !empty($_REQUEST["CNPJ"])) {
-        $cpf = $_REQUEST["CNPJ"];
+        $CNPJ = $_REQUEST["CNPJ"];
 
         $sql = "SELECT * FROM ong WHERE CNPJ=" . $CNPJ;
         $res = $conn->query($sql);
@@ -18,7 +18,7 @@
             $row = $res->fetch_object();
 
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "editar") {
-                $cnpj = $_POST["CNPJ"];
+                $CNPJ = $_POST["CNPJ"];
                 $nomef = $_POST["nomef"];
                 $razao = $_POST["razao"];
                 $telefone = $_POST["telefone"];
@@ -37,7 +37,7 @@
                 if ($conn->query($sql) === TRUE) {
                     echo "Perfil atualizado com sucesso.";
 
-                    header("Location: perfilusu.php");
+                    header("Location: perfilong.php?CNPJ='$row->CNPJ'");
                     exit;
                 } else {
                     echo "Erro ao atualizar o perfil: " . $conn->error;
@@ -105,12 +105,19 @@
     <div id="fotoanimalform">
     <div>
         <div>
-       <img src="choose.png" id="img" height="200" width="200"> 
+            <?php
+                if (!empty($row->fotoong)) {
+                    echo '<img src="img/' . $row->fotoong . '" id="img" height="200" width="200">';
+                } else {
+                    echo '<img src="choose.png" id="img" height="200" width="200">';
+                }
+            ?>
         </div>
         <label>Foto do usuário: </label>
         <input type="file" name="fotoong" id="fotoong" accept="image/*">
     </div>
-    </div>
+</div>
+
     <div>
         <button id="buttoncriar" type="submit">Editar</button>
     </div>

@@ -45,10 +45,11 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
 
             ?><div id="imgperfildog"><?php
             echo '<img src="img/'.$row->fotoanuncio.'" width = "300">';
-            ?></div><div id="descdog"><?php
+            ?></div><div id="descjuntoo"><div id="descdog"><?php
             echo "<h1>". $row->nome. "</h1>";
             echo "<h2>".$row->cidade. "</h2>" . "<br>";
-            echo "Estado: " .$row->estado . "<br>";
+            ?></div><div id="descdog"><?php
+            echo "Estado: " .$row->estado . "Bairro: " .$row->bairro . "<br>";
             echo "Bairro: " .$row->bairro . "<br>";
             echo "Endereço: " .$row->endereco . "<br>";
             echo "Número: " .$row->numero . "<br>";
@@ -68,6 +69,7 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
 }
 
         ?>
+        </div>
         </div>
 </div>
 </div>

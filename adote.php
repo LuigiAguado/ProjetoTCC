@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])) {
         
         <div id="filtro-opcoes" class="escondido">
             <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
-            <input type="text" id="endereco_animal" placeholder="Pesquisar por endereço">
+            <input type="text" id="endereco_animal" placeholder="Pesquisar por cidade">
             <input type="radio" name="sexo" id="sexo_macho" value="Macho"> Macho
             <input type="radio" name="sexo" id="sexo_femea" value="Fêmea"> Fêmea
             <select id="porte">
@@ -37,17 +37,18 @@ if(!isset($_SESSION['id'])) {
         if ($qtd > 0) {
             while ($row = $res->fetch_object()) {
         ?>
-                <div class="cardadote">
-                    <a onclick="location.href='perfildog.php?id=<?php echo $row->id; ?>';">
-                        <img src="img/<?php echo $row->fotoanuncio; ?>" width="130" height="170">
-                        <h2><?php echo $row->nome; ?></h2>
-                        <h3><?php echo $row->endereco; ?></h3>
-                        <p class="sexo"><?php echo $row->sexo; ?></p>
-                        <p class="porte"><?php echo $row->porte; ?></p>
-                        <p class="raca"><?php echo $row->raca; ?></p>
-                        <p class="enfermidade"><?php echo $row->enfermidade; ?></p>
-                    </a>
-                </div>
+        <div class="cardadote">
+            <a onclick="location.href='perfildog.php?id=<?php echo $row->id; ?>';">
+                <img src="img/<?php echo $row->fotoanuncio; ?>" width="130" height="170">
+                <h2><?php echo $row->nome; ?></h2>
+                <h3><?php echo $row->cidade; ?></h3>
+                <p class="sexo informacao-oculta"><?php echo $row->sexo; ?></p>
+                <p class="porte informacao-oculta"><?php echo $row->porte; ?></p>
+                <p class="raca informacao-oculta"><?php echo $row->raca; ?></p>
+                <p class="enfermidade informacao-oculta"><?php echo $row->enfermidade; ?></p>
+            </a>
+        </div>
+
         <?php
             }
         } else {
