@@ -7,6 +7,7 @@
     <div id="contform">
 <?php
 include("config.php");
+$nomef = $_GET["nomef"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["acao"] == "cadastrar") {
     
@@ -26,15 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     $enfermidade = $_POST["enfermidade"];
     $fotoanuncio = $_POST["fotoanuncio"];
 
-    $sql = "INSERT INTO anuncio (nome, endereco, estado, cidade, cep, bairro, numero, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio, ong) VALUES ('{$nome}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}'), '{$ong}')";
-
+    $sql = "INSERT INTO anuncio (nome, endereco, estado, cidade, cep, bairro, numero, idade, sexo, porte, raca, cor, enfermidade, fotoanuncio, ong) VALUES ('{$nome}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$idade}', '{$sexo}', '{$porte}', '{$raca}', '{$cor}', '{$enfermidade}', '{$fotoanuncio}', '{$ong}')";
     if ($conn->query($sql) === true) {
         echo "Anúncio criado com sucesso.";
-        header("Location: anuncio.php");
+        header("Location: anuncio.php?nomef=$ong");
         exit;
     } else {
         echo "Erro ao criar o anúncio: " . $conn->error;
     }
+    
 }
 ?>
 <div id="formulario">
@@ -47,8 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         <input type="text" name="nome" placeholder="Insira o nome do animal" required>
     </div>
     <div class="infoform">
-        <label class="letraform">Organização</label>
-        <input type="text" name="ong" placeholder="Insira a ong do animal" required>
+    <?php
+    
+    ?>
+    <label class="letraform">Organização</label>
+    <input type="text" name="ong" value="<?= $nomef ?>" readonly>
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>
@@ -76,15 +80,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
     </div>
     <div class="infoform">
         <label class="letraform">Data de nascimento</label>
-        <input type="date" id="idadeseta" name="idade">
+        <input type="date" id="idadeseta" name="idade" required>
     </div>
     <div class="infoform">
         <label class="letraform">Sexo</label>
-        <input type="text" name="sexo" placeholder="Insira o porte do animal" required>
+        <select name="sexo" required>
+                <option value="">Selecione o sexo</option>
+                <option value="Macho">Macho</option>
+                <option value="Fêmea">Fêmea</option>
+            </select>
     </div>
     <div class="infoform">
         <label class="letraform">Porte</label>
-        <input type="text" name="porte" placeholder="Insira o porte do animal" required>
+        <select name="porte" required>
+                <option value="">Selecione o porte</option>
+                <option value="Pequeno">Pequeno</option>
+                <option value="Médio">Médio</option>
+                <option value="Grande">Grande</option>
+            </select>
     </div>
     <div class="infoform">
         <label class="letraform">Raça</label>

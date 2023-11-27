@@ -6,7 +6,10 @@ include("header.php");
 <div id="cor">
     <br><br><br><br>
         <div class="criarbotao">
-            <a href="criaranuncio.php" style="text-decoration: none;"><p>Criar novo anúncio</p>
+        <?php
+        $nomef = $_GET["nomef"];
+            ?>
+            <a href="criaranuncio.php?nomef=<?= $nomef ?>" style="text-decoration: none;"><p>Criar novo anúncio</p>
                 <img src="img/sinal2.png" alt="+" width="25" height="25">
             </a>
             <br>
@@ -17,8 +20,11 @@ include("header.php");
         <div id="filtro-opcoes" class="escondido">
             <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
             <input type="text" id="endereco_animal" placeholder="Pesquisar por cidade">
-            <input type="radio" name="sexo" id="sexo_macho" value="Macho"> Macho
-            <input type="radio" name="sexo" id="sexo_femea" value="Fêmea"> Fêmea
+            <select name="sexo" id="sexo">
+                <option value="">Selecione o sexo</option>
+                <option value="Macho">Macho</option>
+                <option value="Fêmea">Fêmea</option>
+            </select>
             <select id="porte">
                 <option value="">Selecione o porte</option>
                 <option value="Pequeno">Pequeno</option>
@@ -71,7 +77,7 @@ include("header.php");
     function filtrarAnimais() {
         var nomeAnimal = document.getElementById("nome_animal").value.toLowerCase();
         var enderecoAnimal = document.getElementById("endereco_animal").value.toLowerCase();
-        var sexoAnimal = document.querySelector('input[name="sexo"]:checked') ? document.querySelector('input[name="sexo"]:checked').value : "";
+        var sexoAnimal = document.getElementById("sexo").value.toLowerCase();
         var porteAnimal = document.getElementById("porte").value.toLowerCase();
         var racaAnimal = document.getElementById("raca").value.toLowerCase();
         var enfermidadeAnimal = document.getElementById("enfermidade").value.toLowerCase();
