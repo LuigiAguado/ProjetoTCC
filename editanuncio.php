@@ -44,36 +44,40 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             }
 
             ?><div id="imgperfildog"><?php
-            echo '<img src="img/'.$row->fotoanuncio.'" width = "300">';
-            ?></div><div id="descjuntoo"><div id="descdog"><?php
+            echo '<img src="img/'.$row->fotoanuncio.'" width = "300" height= "400">';
+            ?></div><div id="titodesc">
+            <div id="descdogtito"><?php
             echo "<h1>". $row->nome. "</h1>";
-            echo "<h2>".$row->cidade. "</h2>" . "<br>";
+            echo "<h2>". "Org: ".$row->ong. "</h2>" . "<br>";
             ?></div><div id="descdog"><?php
-            echo "Estado: " .$row->estado . "Bairro: " .$row->bairro . "<br>";
-            echo "Bairro: " .$row->bairro . "<br>";
-            echo "Endereço: " .$row->endereco . "<br>";
-            echo "Número: " .$row->numero . "<br>";
-            echo "CEP: " .$row->cep . "<br>";
-            echo "Idade: " .$idadeFormatada . "<br>";
-            echo "Sexo: " .$row->sexo . "<br>";
-            echo "Porte: " .$row->porte . "<br>";
-            echo "Raça: " .$row->raca . "<br>";
-            echo "Cor: " .$row->cor . "<br>";
-            echo "Enfermidade: " .$row->enfermidade . "<br>";
-            echo '<div class="buttoncriara">';
-            echo '<button onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
-            echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
-            echo '</div>'."<br>";
+            echo "<div id='colunatito'>"."Cidade: " .$row->cidade. "</div>" ."Estado: " .$row->estado . "<br>";
+            echo "<div id='colunatito'>"."Bairro: " .$row->bairro. "</div>" . "Endereço: " .$row->endereco . "<br>";
+            echo "<div id='colunatito'>"."Número: " .$row->numero. "</div>" . "CEP: " .$row->cep . "<br>";
+            echo "<div id='colunatito'>"."Idade: " .$idadeFormatada. "</div>" . "Sexo: " .$row->sexo . "<br>";
+            echo "<div id='colunatito'>"."Porte: " .$row->porte. "</div>" . "Raça: " .$row->raca . "<br>";
+            echo "<div id='colunatito'>"."Cor: " .$row->cor. "</div>" . "Enfermidade: " .$row->enfermidade . "<br>";
+            ?>
+            </div>
+            <div id="titoint">
+            <?php
+            echo '<button class="buttoncriara" onclick="location.href=\'editaranuncio.php?id='.$row->id.'\';">Editar</button>';
+            echo '<button class="buttoncriara" onclick="if(confirm(\'Tem certeza que deseja excluir o anúncio?\')){location.href=\'exluiranuncio.php?id='.$row->id.'\';}else{false;}">Excluir</button>';
+            ?>
+            </div>  
+            <?php
         }
     }
 }
 
         ?>
+            
+
         </div>
         </div>
 </div>
+
+<br><br><br>
 </div>
-<br><br>
 
 <?php
     include("footer.php");

@@ -56,7 +56,7 @@ if(!isset($_SESSION['id'])) {
         }
         ?>
     </div>
-</div>
+
 <script src="filtroaparece.js"></script>
 
 <script>
@@ -90,7 +90,8 @@ if(!isset($_SESSION['id'])) {
         }
     }
 </script>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 <?php
 include("footer.php");
 ?>

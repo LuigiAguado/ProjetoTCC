@@ -79,10 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         <input type="number" name="cep" placeholder="Insira o CEP do animal" required>
     </div>
     <div class="infoform">
-        <label class="letraform">Data de nascimento</label>
-        <input type="date" id="idadeseta" name="idade" required>
-    </div>
-    <div class="infoform">
         <label class="letraform">Sexo</label>
         <select name="sexo" required>
                 <option value="">Selecione o sexo</option>
@@ -98,6 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
                 <option value="Médio">Médio</option>
                 <option value="Grande">Grande</option>
             </select>
+    </div>
+    <div class="infoform">
+        <label class="letraform">Data de nascimento</label>
+        <input type="date" id="idadeseta" name="idade" required>
     </div>
     <div class="infoform">
         <label class="letraform">Raça</label>

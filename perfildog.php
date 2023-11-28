@@ -44,25 +44,24 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             }
 
             ?><div id="imgperfildog"><?php
-            echo '<img src="img/'.$row->fotoanuncio.'" width = "300">';
-            ?></div><div id="descdog"><?php
+            echo '<img src="img/'.$row->fotoanuncio.'" width = "300" height= "400">';
+            ?></div><div id="titodesc">
+            <div id="descdogtito"><?php
             echo "<h1>". $row->nome. "</h1>";
-            echo "<h2>".$row->cidade. "</h2>" . "<br>";
-            echo "Organização: " .$row->ong . "<br>";
-            echo "Estado: " .$row->estado . "<br>";
-            echo "Bairro: " .$row->bairro . "<br>";
-            echo "Endereço: " .$row->endereco . "<br>";
-            echo "Número: " .$row->numero . "<br>";
-            echo "CEP: " .$row->cep . "<br>";
-            echo "Idade: " .$idadeFormatada . "<br>";
-            echo "Sexo: " .$row->sexo . "<br>";
-            echo "Porte: " .$row->porte . "<br>";
-            echo "Raça: " .$row->raca . "<br>";
-            echo "Cor: " .$row->cor . "<br>";
-            echo "Enfermidade: " .$row->enfermidade . "<br>";
+            echo "<h2>". "Org: ".$row->ong. "</h2>" . "<br>";
+            ?></div><div id="descdog"><?php
+            echo "<div id='colunatito'>"."Cidade: " .$row->cidade. "</div>" ."Estado: " .$row->estado . "<br>";
+            echo "<div id='colunatito'>"."Bairro: " .$row->bairro. "</div>" . "Endereço: " .$row->endereco . "<br>";
+            echo "<div id='colunatito'>"."Número: " .$row->numero. "</div>" . "CEP: " .$row->cep . "<br>";
+            echo "<div id='colunatito'>"."Idade: " .$idadeFormatada. "</div>" . "Sexo: " .$row->sexo . "<br>";
+            echo "<div id='colunatito'>"."Porte: " .$row->porte. "</div>" . "Raça: " .$row->raca . "<br>";
+            echo "<div id='colunatito'>"."Cor: " .$row->cor. "</div>" . "Enfermidade: " .$row->enfermidade . "<br>";
             ?>
+            </div>
+            <div id="titoint">
             Ficou interessado?
             <a href="contatoong.php?nomef=<?php echo $row->ong; ?>">adotar</a>
+            </div>  
             <?php
         }
     }
