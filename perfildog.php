@@ -48,7 +48,7 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
             ?></div><div id="titodesc">
             <div id="descdogtito"><?php
             echo "<h1>". $row->nome. "</h1>";
-            echo "<h2>". "Org: ".$row->ong. "</h2>" . "<br>";
+            echo "<h2>". "ONG: ".$row->ong. "</h2>" . "<br>";
             ?></div><div id="descdog"><?php
             echo "<div id='colunatito'>"."Cidade: " .$row->cidade. "</div>" ."Estado: " .$row->estado . "<br>";
             echo "<div id='colunatito'>"."Bairro: " .$row->bairro. "</div>" . "Endereço: " .$row->endereco . "<br>";
@@ -70,8 +70,9 @@ if (isset($_REQUEST["id"]) && !empty($_REQUEST["id"])) {
         ?>
         </div>
 </div>
+
 </div>
-<br><br>
+<br><br><br><br>
 
 <?php
     include("footer.php");

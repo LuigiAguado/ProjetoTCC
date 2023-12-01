@@ -2,6 +2,7 @@
 include('header.php');
 ?>
     <div id="conteudo">
+        <div id="cor">
         <div class="resumovideo">
             <div class="imgdog">
                 <img class="imgdogtam" src="img/Pegadas.png">
@@ -19,7 +20,7 @@ include('header.php');
                 <img class="imgdogrestam" src="img/cachorro3.png">
             </div>
             <div class="resumotexto">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nemo praesentium vitae sequi accusantium suscipit quam enim odio modi, quisquam quaerat minus voluptas et expedita reprehenderit. Saepe unde impedit distinctio!</p>
+                <p>Desenvolvemos o site para combater a superpopulação em abrigos, aliviar o sofrimento animal e facilitar a adoção. Nosso objetivo é simplificar o processo, destacando animais disponíveis e conectando-os a lares amorosos. Cada aspecto do site reflete nosso compromisso em fazer a diferença real na vida desses animais, promovendo a adoção responsável.</p>
             </div>
         </div>
         </div>

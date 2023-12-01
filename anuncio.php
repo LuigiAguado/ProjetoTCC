@@ -12,15 +12,16 @@ include("header.php");
             <a href="criaranuncio.php?nomef=<?= $nomef ?>" style="text-decoration: none;"><p>Criar novo anúncio</p>
                 <img src="img/sinal2.png" alt="+" width="25" height="25">
             </a>
-            <br>
+            
     </div>
+    <br><br><br>
     <div id="filtro-container">
         <button id="filtro-btn" onclick="toggleFiltro()">Filtro</button>
         
         <div id="filtro-opcoes" class="escondido">
             <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
             <input type="text" id="endereco_animal" placeholder="Pesquisar por cidade">
-            <select name="sexo" id="sexo">
+            <select id="sexo">
                 <option value="">Selecione o sexo</option>
                 <option value="Macho">Macho</option>
                 <option value="Fêmea">Fêmea</option>

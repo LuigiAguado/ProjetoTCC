@@ -132,8 +132,12 @@ let img = document.getElementById('img');
 let input = document.getElementById('fotoong')
 
 input.onchange = (e) => {
-    if (input.files[0])
+    if (input.files[0]){
         img.src = URL.createObjectURL(input.files[0]);
+    } else{
+        img.src = URL.createObjectURL(input.files[fotoong]);
+    }
+        
 };
 </script>
 </body>

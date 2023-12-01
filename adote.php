@@ -8,6 +8,7 @@ if(!isset($_SESSION['id'])) {
 ?>
 
 <div id="cor">
+<br><br><br><br><br><br>
     <div class="titadote"><H1>Encontre um amigo</H1></div>
     <div id="filtro-container">
         <button id="filtro-btn" onclick="toggleFiltro()">Filtro</button>
@@ -15,8 +16,11 @@ if(!isset($_SESSION['id'])) {
         <div id="filtro-opcoes" class="escondido">
             <input type="text" id="nome_animal" placeholder="Pesquisar por nome">
             <input type="text" id="endereco_animal" placeholder="Pesquisar por cidade">
-            <input type="radio" name="sexo" id="sexo_macho" value="Macho"> Macho
-            <input type="radio" name="sexo" id="sexo_femea" value="Fêmea"> Fêmea
+            <select id="sexo">
+                <option value="">Selecione o sexo</option>
+                <option value="Macho">Macho</option>
+                <option value="Fêmea">Fêmea</option>
+            </select>
             <select id="porte">
                 <option value="">Selecione o porte</option>
                 <option value="Pequeno">Pequeno</option>
@@ -63,7 +67,7 @@ if(!isset($_SESSION['id'])) {
     function filtrarAnimais() {
         var nomeAnimal = document.getElementById("nome_animal").value.toLowerCase();
         var enderecoAnimal = document.getElementById("endereco_animal").value.toLowerCase();
-        var sexoAnimal = document.querySelector('input[name="sexo"]:checked') ? document.querySelector('input[name="sexo"]:checked').value : "";
+        var sexoAnimal = document.getElementById("sexo").value.toLowerCase();
         var porteAnimal = document.getElementById("porte").value.toLowerCase();
         var racaAnimal = document.getElementById("raca").value.toLowerCase();
         var enfermidadeAnimal = document.getElementById("enfermidade").value.toLowerCase();
@@ -90,7 +94,7 @@ if(!isset($_SESSION['id'])) {
         }
     }
 </script>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <?php
 include("footer.php");

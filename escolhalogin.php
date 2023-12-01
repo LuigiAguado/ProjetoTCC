@@ -3,7 +3,7 @@
 ?>      
 
 <div id="cor">
-<br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="pageescolha">
     <h1>LOGIN</h1>
     </div>
@@ -16,7 +16,7 @@
     <h3 class="pageescolha">Não tenho cadastro:  </h3>
         <a href="criarusu.php" class="aescolha">Cadastrar</a>
     </div>
-    <br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 

@@ -91,21 +91,32 @@
         <input type="number" name="cep" value="<?php echo $row->cep; ?>">
     </div>
     <div class="infoform">
+    <label class="letraform">Sexo</label>
+    <select name="sexo" required>
+        <option value="">Selecione o sexo</option>
+        <option value="Macho" <?php echo ($row->sexo == 'Macho') ? 'selected' : ''; ?>>Macho</option>
+        <option value="Fêmea" <?php echo ($row->sexo == 'Fêmea') ? 'selected' : ''; ?>>Fêmea</option>
+    </select>
+</div>
+
+<div class="infoform">
+    <label class="letraform">Porte</label>
+    <select name="porte" required>
+        <option value="">Selecione o porte</option>
+        <option value="Pequeno" <?php echo ($row->porte == 'Pequeno') ? 'selected' : ''; ?>>Pequeno</option>
+        <option value="Médio" <?php echo ($row->porte == 'Médio') ? 'selected' : ''; ?>>Médio</option>
+        <option value="Grande" <?php echo ($row->porte == 'Grande') ? 'selected' : ''; ?>>Grande</option>
+    </select>
+</div>
+<div class="infoform">
         <label class="letraform">Idade (Aproximada)</label>
         <input type="date" id="idadeseta" name="idade" value="<?php echo $row->idade; ?>">
     </div>
-    <div class="infoform">
-        <label class="letraform">Sexo</label>
-        <input type="text" name="sexo" value="<?php echo $row->sexo; ?>">
-    </div>
-    <div class="infoform">
-        <label class="letraform">Porte</label>
-        <input type="text" name="porte" value="<?php echo $row->porte; ?>">
-    </div>
-    <div class="infoform">
-        <label class="letraform">Raça</label>
-        <input type="text" name="raca" value="<?php echo $row->raca; ?>">
-    </div>
+<div class="infoform">
+    <label class="letraform">Raça</label>
+    <input type="text" name="raca" value="<?php echo $row->raca; ?>">
+</div>
+
     <div class="infoform">
         <label class="letraform">Cor</label>
         <input type="text" name="cor" value="<?php echo $row->cor; ?>">

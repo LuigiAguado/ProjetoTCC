@@ -31,7 +31,6 @@
                         <a href="contato.php" id="duvidasbutton">?</a>
                 </div>
             </div>
-        </div>
 
         <div id="footer_copyright" style="color: #fff;">
             &#169
