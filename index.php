@@ -8,7 +8,7 @@ include('header.php');
                 <img class="imgdogtam" src="img/Pegadas.png">
             </div>
             <div class="video">
-                <video class="contvideo" src="vid/teste.mp4" controls poster="img/Dog.jpg"></video>
+                <video class="contvideo" src="vid/intro.mp4" controls poster="img/Dog.jpg"></video>
             </div>
             <div class="imgdog">
                 <img class="imgdogtam" src="img/Pegadas2.png">
