@@ -67,7 +67,7 @@
     </div>
     <div class="infoform">
         <label class="letraform">CNPJ</label>
-        <input type="number" id="CNPJ" name="CNPJ" value="0" min="0" value="<?php echo $row->CNPJ; ?>" disabled>
+        <input type="number" id="CNPJ" name="CNPJ" value="<?php echo $row->CNPJ; ?>" disabled>
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>

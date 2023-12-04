@@ -31,7 +31,7 @@ try{
 
     if($mail->send()){
         echo "<script>alert('Mensagem enviada com sucesso!');</script>";
-        header("Location: contato.php");
+    echo "<script>setTimeout(function() { window.location = 'contato.php'; }, 200);</script>";
     }else{
         echo 'Mensagem não enviada.';
     }
