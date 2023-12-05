@@ -33,7 +33,6 @@ include("header.php");
                 <option value="Grande">Grande</option>
             </select>
             <input type="text" id="raca" placeholder="Pesquisar por raça">
-            <input type="text" id="enfermidade" placeholder="Pesquisar por enfermidade">
             <button onclick="filtrarAnimais()">Pesquisar</button>
         </div>
     </div>
@@ -42,7 +41,7 @@ include("header.php");
         if (isset($_GET["nomef"]) && !empty($_GET["nomef"])) {
             $nomef = $_GET["nomef"];
 
-            $sql = "SELECT nome, cidade, fotoanuncio, id FROM anuncio WHERE ong = ?";
+            $sql = "SELECT * FROM anuncio WHERE ong = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $nomef);
             $stmt->execute();
@@ -60,7 +59,6 @@ include("header.php");
                 <p class="sexo informacao-oculta"><?php echo $row->sexo; ?></p>
                 <p class="porte informacao-oculta"><?php echo $row->porte; ?></p>
                 <p class="raca informacao-oculta"><?php echo $row->raca; ?></p>
-                <p class="enfermidade informacao-oculta"><?php echo $row->enfermidade; ?></p>
             </a>
         </div>
 
@@ -72,6 +70,7 @@ include("header.php");
     }
         ?>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <script src="filtroaparece.js"></script>
 <script>
@@ -81,7 +80,6 @@ include("header.php");
         var sexoAnimal = document.getElementById("sexo").value.toLowerCase();
         var porteAnimal = document.getElementById("porte").value.toLowerCase();
         var racaAnimal = document.getElementById("raca").value.toLowerCase();
-        var enfermidadeAnimal = document.getElementById("enfermidade").value.toLowerCase();
         var cards = document.querySelectorAll(".cardadote");
 
         for (var i = 0; i < cards.length; i++) {
@@ -90,14 +88,12 @@ include("header.php");
             var animalSexo = cards[i].querySelector('.sexo').innerText.toLowerCase();
             var animalPorte = cards[i].querySelector('.porte').innerText.toLowerCase();
             var animalRaca = cards[i].querySelector('.raca').innerText.toLowerCase();
-            var animalEnfermidade = cards[i].querySelector('.enfermidade').innerText.toLowerCase();
 
             if (animalNome.includes(nomeAnimal) &&
                 animalEndereco.includes(enderecoAnimal) &&
                 (sexoAnimal === "" || animalSexo.includes(sexoAnimal)) &&
                 (porteAnimal === "" || animalPorte.includes(porteAnimal)) &&
-                animalRaca.includes(racaAnimal) &&
-                animalEnfermidade.includes(enfermidadeAnimal)) {
+                animalRaca.includes(racaAnimal)) {
                 cards[i].style.display = "block";
             } else {
                 cards[i].style.display = "none";
@@ -105,6 +101,7 @@ include("header.php");
         }
     }
 </script>
+
 <?php
 include("footer.php");
 ?>

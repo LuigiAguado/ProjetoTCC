@@ -10,7 +10,11 @@
         if ($result->num_rows > 0) {
             $deleteSql = "DELETE FROM usuario WHERE cpf = $cpf";
             if ($conn->query($deleteSql) === true) {
-                echo "peril excluído com sucesso.";
+                // Destrói a sessão
+                session_start();
+                session_destroy();
+
+                echo "Perfil excluído com sucesso.";
                 header("Location: index.php");
             } else {
                 echo "Erro ao excluir o perfil: " . $conn->error;

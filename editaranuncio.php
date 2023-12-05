@@ -60,35 +60,35 @@
     <div class="detalheform">
     <div class="infoform">
         <label class="letraform">Nome</label>
-        <input type="text" name="nome" value="<?php echo $row->nome; ?>">
+        <input type="text" name="nome" value="<?php echo $row->nome; ?>" required>
     </div>
     <div class="infoform">
         <label class="letraform">Organização</label>
-        <input type="text" name="ong" value="<?php echo $row->ong; ?>">
+        <input type="text" name="ong" value="<?php echo $row->ong; ?>" readonly>
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>
-        <input type="text" name="estado" value="<?php echo $row->estado; ?>">
+        <input type="text" name="estado" value="<?php echo $row->estado; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Cidade</label>
-        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>">
+        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Bairro</label>
-        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>">
+        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" value="<?php echo $row->endereco; ?>">
+        <input type="text" name="endereco" value="<?php echo $row->endereco; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Número</label>
-        <input type="number" name="numero" value="<?php echo $row->numero; ?>">
+        <input type="number" name="numero" value="<?php echo $row->numero; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">CEP</label>
-        <input type="number" name="cep" value="<?php echo $row->cep; ?>">
+        <input type="number" name="cep" value="<?php echo $row->cep; ?>"required>
     </div>
     <div class="infoform">
     <label class="letraform">Sexo</label>
@@ -110,16 +110,16 @@
 </div>
 <div class="infoform">
         <label class="letraform">Idade (Aproximada)</label>
-        <input type="date" id="idadeseta" name="idade" value="<?php echo $row->idade; ?>">
+        <input type="date" id="idadeseta" name="idade" value="<?php echo $row->idade; ?>"required>
     </div>
 <div class="infoform">
     <label class="letraform">Raça</label>
-    <input type="text" name="raca" value="<?php echo $row->raca; ?>">
+    <input type="text" name="raca" value="<?php echo $row->raca; ?>"required>
 </div>
 
     <div class="infoform">
         <label class="letraform">Cor</label>
-        <input type="text" name="cor" value="<?php echo $row->cor; ?>">
+        <input type="text" name="cor" value="<?php echo $row->cor; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Enfermidade</label>

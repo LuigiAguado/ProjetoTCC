@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["acao"]) && $_POST["aca
         echo "<script> alert('Email ou CNPJ já cadastrado!'); </script>";
     } else {
         if($senha == $confirmasenha){
-            $sql = "INSERT INTO ong (CNPJ, nomef, razao, telefone, endereco, estado, cidade, cep, numero, bairro, senha, fotoong, email) VALUES ('{$CNPJ}', '{$nomef}', '{$razao}', '{$telefone}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$senha}', '{$fotoong}', '{$email}')";
+            $sql = "INSERT INTO ong (CNPJ, nomef, razao, telefone, endereco, estado, cidade, cep, bairro, numero, senha, fotoong, email) VALUES ('{$CNPJ}', '{$nomef}', '{$razao}', '{$telefone}', '{$endereco}', '{$estado}', '{$cidade}', '{$cep}', '{$bairro}', '{$numero}', '{$senha}', '{$fotoong}', '{$email}')";
             mysqli_query($conn,$sql);
-            header("Location: loginusu.php");
+            header("Location: loginong.php");
             echo "<script> alert('Usuário registrado com sucesso!'); </script>";
         } else{
             echo "<script> alert('Senha Divergente!'); </script>";

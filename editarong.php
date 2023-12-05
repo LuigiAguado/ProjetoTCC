@@ -32,7 +32,21 @@
                 $numero = $_POST["numero"];
                 $fotoong = $_POST["fotoong"];
 
-                $sql = "UPDATE ong SET CNPJ='{$CNPJ}', nomef='{$nomef}', razao='{$razao}', telefone='{$telefone}', senha='{$senha}', email='{$email}', endereco='{$endereco}', estado='{$estado}', cidade='{$cidade}', cep='{$cep}', bairro='{$bairro}', numero='{$numero}', fotoong='{$fotoong}'";
+                $sql = "UPDATE ong SET 
+        nomef='{$nomef}', 
+        razao='{$razao}', 
+        telefone='{$telefone}', 
+        senha='{$senha}', 
+        email='{$email}', 
+        endereco='{$endereco}', 
+        estado='{$estado}', 
+        cidade='{$cidade}', 
+        cep='{$cep}', 
+        bairro='{$bairro}', 
+        numero='{$numero}', 
+        fotoong='{$fotoong}' 
+        WHERE CNPJ='{$CNPJ}'";
+
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Perfil atualizado com sucesso.";
@@ -55,51 +69,51 @@
     <div class="detalheform">
     <div class="infoform">
         <label class="letraform">Nome Fantasia</label>
-        <input type="text" name="nomef" placeholder="Insira o nome fantasia" value="<?php echo $row->nomef; ?>">
+        <input type="text" name="nomef" placeholder="Insira o nome fantasia" value="<?php echo $row->nomef; ?>" required>
     </div>
     <div class="infoform">
         <label class="letraform">Razão social</label>
-        <input type="text" name="razao" placeholder="Insira a razão social" value="<?php echo $row->razao; ?>">
+        <input type="text" name="razao" placeholder="Insira a razão social" value="<?php echo $row->razao; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Email</label>
-        <input type="text" name="email" placeholder="Insira o email" value="<?php echo $row->email; ?>">
+        <input type="text" name="email" placeholder="Insira o email" value="<?php echo $row->email; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">CNPJ</label>
-        <input type="number" id="CNPJ" name="CNPJ" value="<?php echo $row->CNPJ; ?>" disabled>
+        <input type="number" id="CNPJ" name="CNPJ" value="<?php echo $row->CNPJ; ?>" readonly>
     </div>
     <div class="infoform">
         <label class="letraform">Estado</label>
-        <input type="text" name="estado" value="<?php echo $row->estado; ?>">
+        <input type="text" name="estado" value="<?php echo $row->estado; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Cidade</label>
-        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>">
+        <input type="text" name="cidade" value="<?php echo $row->cidade; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Bairro</label>
-        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>">
+        <input type="text" name="bairro" value="<?php echo $row->bairro; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Endereço</label>
-        <input type="text" name="endereco" value="<?php echo $row->endereco; ?>">
+        <input type="text" name="endereco" value="<?php echo $row->endereco; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Número</label>
-        <input type="number" name="numero" value="<?php echo $row->numero; ?>">
+        <input type="number" name="numero" value="<?php echo $row->numero; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">CEP</label>
-        <input type="number" name="cep" value="<?php echo $row->cep; ?>">
+        <input type="number" name="cep" value="<?php echo $row->cep; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">Telefone</label>
-        <input type="number" name="telefone" placeholder="Insira o telefone" value="<?php echo $row->telefone; ?>">
+        <input type="number" name="telefone" placeholder="Insira o telefone" value="<?php echo $row->telefone; ?>"required>
     </div>
     <div class="infoform">
         <label class="letraform">senha</label>
-        <input type="password" name="senha" placeholder="Insira a sua senha" value="<?php echo $row->senha; ?>">
+        <input type="password" name="senha" placeholder="Insira a sua senha" value="<?php echo $row->senha; ?>"required>
     </div>
     </div>
     <div id="fotoanimalform">

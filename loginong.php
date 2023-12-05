@@ -64,9 +64,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     align-items: center;
     justify-content: center;">  
     <p>Ainda não possue login? </p>     
-        <a href="criarusu.php" 
+        <a href="criarong.php" 
         style="color: black;">
-                Cadastrar
+                 Cadastrar
         </a>
     </div>
 </form>

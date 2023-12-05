@@ -37,7 +37,7 @@
                 
                 ?></div><div class="perfilusu"> <?php
                 echo '<button onclick="location.href=\'editarong.php?CNPJ='.$row->CNPJ.'\';">Editar</button>';
-                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o Perfil?\')){location.href=\'excluiriusu.php?CNPJ='.$row->CNPJ.'\';}else{false;}">Excluir</button>';
+                echo '<button onclick="if(confirm(\'Tem certeza que deseja excluir o Perfil?\')){location.href=\'excluirong.php?CNPJ='.$row->CNPJ.'\';}else{false;}">Excluir</button>';
                 echo '<button onclick="location.href=\'logout.php\';">Sair</button>';
                 
             }
@@ -48,7 +48,6 @@
             </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>    
-</div>
 </div>
 
         <?php
