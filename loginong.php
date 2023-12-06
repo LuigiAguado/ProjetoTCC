@@ -63,6 +63,17 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     display: flex;
     align-items: center;
     justify-content: center;">  
+    <p>Esqueceu a senha? </p>     
+        <a href="recuperarsenhaong.php" 
+        style="color: black;">
+                Recuperar
+        </a>
+    </div>
+    <br>
+    <div id="naocadastro" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;">  
     <p>Ainda não possue login? </p>     
         <a href="criarong.php" 
         style="color: black;">

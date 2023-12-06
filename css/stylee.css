@@ -735,6 +735,10 @@ form .detalheformc .infoformc{
 
 form .detalheformc .infoformcc{
     margin-bottom: 15px;
+}
+
+form .detalheformc .infoformcc{
+    margin-bottom: 15px;
     width: calc(100%);
 }
 

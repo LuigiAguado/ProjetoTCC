@@ -59,6 +59,18 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         <button id="buttoncriar" type="submit">Entrar</button>
     </div>
     <br><br>
+    <div>
+    <div id="naocadastro" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;">  
+    <p>Esqueceu a senha? </p>     
+        <a href="recuperarsenhausu.php" 
+        style="color: black;">
+                Recuperar
+        </a>
+    </div>
+    <br>
     <div id="naocadastro" style="
     display: flex;
     align-items: center;
@@ -68,6 +80,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         style="color: black;">
                 Cadastrar
         </a>
+    </div>
     </div>
 </form>
 </div>
