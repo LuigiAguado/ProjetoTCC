@@ -9,15 +9,15 @@
             </div>
 
             <div id="footer_social_media">
-                    <a href="#" class="footer-link" id="instagram">
+                    <a href="https://www.instagram.com/" class="footer-link" id="instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="#" class="footer-link" id="facebook">
+                    <a href="https://www.facebook.com/" class="footer-link" id="facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
 
-                    <a href="#" class="footer-link" id="whatsapp">
+                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="footer-link" id="whatsapp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
